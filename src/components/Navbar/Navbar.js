@@ -3,6 +3,7 @@ import CartWidget from "../CartWidget/CartWidget"
 import "./Navbar.scss"
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai"
 import {useState} from "react"
+import { Link } from "react-router-dom"
 
 
 
@@ -28,10 +29,10 @@ const Navbar = () => {
                             <p className="p-4 text-xl text-gray-700 font-serif">StockApp.</p>
                         </div>
                         <ul className="shadow-lg hidden md:flex font-bold">
-                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><a href="#" className="hover:text-gray-200">Inicio</a></li>
-                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><a href="#" className="hover:text-gray-200">Escanear</a></li>
-                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400 hover:text-base"><a href="#" className="hover:text-gray-200">Productos</a></li>
-                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><a href="#" className="hover:text-gray-200">Clientes</a></li>
+                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/" className="hover:text-gray-200">Inicio</Link></li>
+                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Scanner" className="hover:text-gray-200">Escanear</Link></li>
+                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400 hover:text-base"><Link to="/ItemListContainer" className="hover:text-gray-200">Productos</Link></li>
+                            <li className="p-4 text-gray-700 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Clientes" className="hover:text-gray-200">Clientes</Link></li>
 
                         </ul>
                         <form className="flex items-center">   
@@ -62,10 +63,10 @@ const Navbar = () => {
                         </div>
                         <div className={!nav ? "fixed left-[-100%] ease-in duration-500" : "fixed md:hidden left-4 top-15 w-[60%] text-sm text-white font bg-black"}>
                             <ul className="p-4">
-                                    <li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><a href="#">Inicio</a></li>
-                                    <li className="p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><a href="#">Escanear</a></li>
-                                    <li className="p-5 border-b border-[#dbcfcf] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><a href="#">Productos</a></li>
-                                    <li className="p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><a href="#">Clientes</a></li>
+                                    <li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/I">Inicio</Link></li>
+                                    <li className="p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="Scanner">Escanear</Link></li>
+                                    <li className="p-5 border-b border-[#dbcfcf] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/ItemListContainer">Productos</Link></li>
+                                    <li className="p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/Clientes">Clientes</Link></li>
 
                             </ul>
                         </div>
