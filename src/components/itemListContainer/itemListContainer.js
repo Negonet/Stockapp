@@ -4,23 +4,30 @@ import { useState} from "react"
 import { useEffect} from "react"
 import { askData } from '../../helpers/askData'
 import { ItemList } from '../itemList/itemList'
-
-const ItemListCointainer = ( {} ) => {
-
+import { useParams } from 'react-router-dom'
 
 
+const ItemListContainer = ( {} ) => {
+
+    const { categoryId } = useParams()
+    console.log(categoryId)
     
     const [product, setProducts] = useState([])
 
     useEffect (() => {
         askData()
             .then((response) => {
-                setProducts(response)
+                if (!categoryId) {
+                    setProducts(response)
+                } else {
+                    setProducts( response.filter((prod) => prod.category === categoryId))
+                }
+                
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [categoryId])
 
 
 
@@ -33,4 +40,4 @@ const ItemListCointainer = ( {} ) => {
     )
 }
 
-export default ItemListCointainer
+export default ItemListContainer

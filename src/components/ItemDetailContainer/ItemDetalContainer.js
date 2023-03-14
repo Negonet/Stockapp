@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { askProductId } from "../../helpers/askData";
 
 
@@ -9,12 +10,16 @@ export const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
 
+
+    const { itemId } = useParams()
+    
+    console.log(itemId)
     console.log(item)
 
     useEffect (() => {
         setLoading(true)
 
-        askProductId()
+        askProductId( Number(itemId))
             .then((resp) => {
                 setItem(resp)
             })
@@ -26,8 +31,8 @@ export const ItemDetailContainer = () => {
 
     return (
 
-        <div>
-            <h2>Item Detail Container</h2>
+        <div className="">
+            <h2 className="text-white text-xl"> Item Detail Container</h2>
         </div>
     )
 }

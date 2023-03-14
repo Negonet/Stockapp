@@ -9,7 +9,8 @@ const DATABASE = [
             "destino": "Uruguay",
             "kg": 150,
             "cajas": 15,
-            "img": './imgs/cogote.png'
+            "img": './imgs/cogote.png',
+            "category": 'menudencia'
         },
         {
             "id": 2,
@@ -18,8 +19,8 @@ const DATABASE = [
             "destino": "Uruguay",
             "kg": 200,
             "cajas": 20,
-            "img": './imgs/costilla.jpg'
-            
+            "img": './imgs/costilla.jpg',
+            "category": 'corte'
     
         },
         {
@@ -29,8 +30,8 @@ const DATABASE = [
             "destino": "Uruguay",
             "kg": 50,
             "cajas": 3,
-            "img": './imgs/picana.jpg'
-            
+            "img": './imgs/picana.jpg',
+            "category": 'corte'
     
         },
         {
@@ -40,8 +41,8 @@ const DATABASE = [
             "destino": "Brasil",
             "kg": 100,
             "cajas": 10,
-            "img": './imgs/short_rack.jpg'
-            
+            "img": './imgs/short_rack.jpg',
+            "category": 'corte'
     
         },
         {
@@ -51,8 +52,8 @@ const DATABASE = [
             "destino": "Brasil",
             "kg": 230,
             "cajas": 23,
-            "img": './imgs/pierna.jpg'
-            
+            "img": './imgs/pierna.jpg',
+            "category": 'corte'
             
     
         },
@@ -63,8 +64,8 @@ const DATABASE = [
             "destino": "Inglaterra",
             "kg": 90,
             "cajas": 8,
-            "img": './imgs/paleta.jpg'
-            
+            "img": './imgs/paleta.jpg',
+            "category": 'corte'
     
         },
         {
@@ -74,8 +75,8 @@ const DATABASE = [
             "destino": "Uruguay",
             "kg": 65,
             "cajas": 7,
-            "img": './imgs/corazon.jpg'
-            
+            "img": './imgs/corazon.jpg',
+            "category": 'menudencia'
             
     
         }

@@ -1,8 +1,29 @@
+div {
+        button {
+            padding: 5px;
+            margin: 10px;
+            P {
+                font-size: 15px;
+            }
+        };
 
-.itemCard{
-    background-color: black;
-    height: auto;
-   // display: flex;
-    max-width: 900px;
-    overflow-x: hidden;
+
+        button:hover{
+            background-color: bisque;
+            
+            
+            p:hover {
+                color: black;
+                
+            }
+}
+   
+   .itemCard{
+        background-color: black;
+        height: auto;
+    // display: flex;
+        max-width: 900px;
+        overflow-x: hidden;
+    }
+
 }

@@ -1,5 +1,6 @@
 
 import './item.scss'
+import { Link } from 'react-router-dom'
 
 
 const Item = ( {item} ) => {
@@ -8,7 +9,9 @@ const Item = ( {item} ) => {
             <div className="flex">
             <div className="card bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
                                         
-                                        <img className="rounded-lg" src={item.img} alt={item.name}/>
+                                        <Link to="/">
+                                         <img className="rounded-lg" src={item.img} alt={item.name}/>
+                                        </Link>
                                         <div className="px-6 py-4">  
                                         <p className="hidden">{item.id}</p>
                                         <div className="font-bold text-gray-700 text-xl mb-2">
@@ -23,7 +26,7 @@ const Item = ( {item} ) => {
                                 
                                         <p className="text-gray-700 text-base">Cantidad: {item.cajas}</p>
                                         
-                                        <button className="btn_detalle rounded-lg">Ver detalle</button>
+                                        <button className="btn_detalle rounded-lg"><Link to={`/detail/${item.id}`}>Ver detalle</Link></button>
                                         </div>
                                     
                                 </div>

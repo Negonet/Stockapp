@@ -1,5 +1,5 @@
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetalContainer.js";
-import ItemListCointainer from "./components/itemListContainer/itemListContainer.js";
+import ItemListContainer from "./components/itemListContainer/itemListContainer.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Banner from "./components/Banner/Banner.js"
 import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
@@ -20,7 +20,9 @@ function App () {
 
         <Routes>
           <Route path="/" element={ <Inicio/> }/>
-          <Route path="/ItemListContainer" element={ <ItemListCointainer /> }/>
+          <Route path="/products/:categoryId" element={ <ItemListContainer/> }/>
+          <Route path="/ItemListContainer/" element={ <ItemListContainer /> }/>
+          <Route path="/detail/:itemId" element={ <ItemDetailContainer /> }/>
           <Route path="/Clientes" element={ <Clientes/> }/>
           <Route path="/Scanner" element={<Scanner/> }/>
           <Route path="*" element={ <Navigate to="/"/> }/>

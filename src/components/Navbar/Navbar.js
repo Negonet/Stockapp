@@ -25,7 +25,9 @@ const Navbar = () => {
                     
                     <div className="flex justify-between items-center h-24 max-w-[1240px] bg-slate-50 mx-auto px-4 shadow-lg">
                         <div className="flex item-center">
-                            <img src='./imgs/logo.png' alt='logo' className="header__logo" />   
+                            <Link>
+                                <img src='./imgs/logo.png' alt='logo' className="header__logo" />   
+                            </Link>
                             <p className="p-4 text-xl text-gray-700 font-serif">StockApp.</p>
                         </div>
                         <ul className="shadow-lg hidden md:flex font-bold">
