@@ -1,0 +1,16 @@
+div.image{
+    background-image: url("../../../public/imgs/banner1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    height: 483px;
+    justify-content: center;
+        
+        button:hover {
+            background-color: bisque;
+            color: black;
+            transition: 500ms;
+        }
+
+}
+

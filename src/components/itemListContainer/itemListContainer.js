@@ -1,15 +1,34 @@
 
 import './itemListContainer.scss'
+import { useState} from "react"
+import { useEffect} from "react"
+import { askData } from '../../helpers/askData'
+import { ItemList } from '../itemList/itemList'
+
+const ItemListCointainer = ( {} ) => {
 
 
-const ItemListCointainer = ( {greeting} ) => {
+
     
-    
+    const [product, setProducts] = useState([])
+
+    useEffect (() => {
+        askData()
+            .then((response) => {
+                setProducts(response)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [])
+
+
+
     return (
         <div className='listado__items'>
-            <h2>Listado de producto</h2>
-            <hr/>
-            {greeting}
+           
+        <ItemList items={product}/>                   
+            
         </div>
     )
 }

@@ -1,58 +1,13 @@
-
-.header {
-  background-color: #393939;
-    
-    .header__container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      
-        .header__logo {
-          max-width: 150px;
-          border-radius: 20%;
-          box-shadow: 5px 5px #e0dada1e;
-          
-        }
-       
-         .navbar {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 30px;
-            
-            button {
-              padding: 0px;
-              background-color: rgb(25, 25, 25);
-              border-radius: 15px;
-            }  
-            button:hover {
-              
-              background-color: rgba(50, 3, 94, 0.508);
-              box-shadow: 5px 5px #e0dada1e;
-              transition: 0.4s; 
-              transform: scale(1.05);
-            }
-            .navbar__link {
-              color:rgb(203, 203, 203);
-              
-              padding: 15px;
-              font-size: 20px;
-              font-weight: 700;
-              text-decoration: none;
-              display: block;
-              border-radius: 10px;
-              
-            }
-        }
-    }
+.header__logo {
+  max-width: 60px;
+  
+  border-radius: 20%;
+  
 }
 
-
-
-
+ul li:active {
+  color:black;
+}
 
 
 
