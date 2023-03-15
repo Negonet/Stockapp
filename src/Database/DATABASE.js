@@ -23,7 +23,7 @@ const DATABASE = [
             "cajas": 20,
             "img": './imgs/costilla.jpg',
             "precio" : 170,
-            "descripcion" : '',
+            "descripcion" : 'De los cortes más buscados, el costillar Ovino no puede faltar en una parrilla.',
             "category": 'corte'
     
         },
@@ -36,7 +36,7 @@ const DATABASE = [
             "cajas": 3,
             "img": './imgs/picana.jpg',
             "precio" : 340,
-            "descripcion" : '',
+            "descripcion" : 'Cuadril, o picaña, es un corte de pulpa sin hueso, ideal para hacerlo en la parrilla o en el horno, relleno',
             "category": 'corte'
     
         },
@@ -49,7 +49,7 @@ const DATABASE = [
             "cajas": 10,
             "img": './imgs/short_rack.jpg',
             "precio" : 480,
-            "descripcion" : '',
+            "descripcion" : 'Corte por excelencia, es digno de un plato de clase.',
             "category": 'corte'
     
         },
@@ -62,7 +62,7 @@ const DATABASE = [
             "cajas": 23,
             "img": './imgs/pierna.jpg',
             "precio" : 235,
-            "descripcion" : '',
+            "descripcion" : 'También conocido como Pernil con Hueso, es un corte ideal para hacerlo en la parrilla o en el horno, relleno',
             "category": 'corte'
             
     
@@ -76,7 +76,7 @@ const DATABASE = [
             "cajas": 8,
             "img": './imgs/paleta.jpg',
             "precio" : 215,
-            "descripcion" : '',
+            "descripcion" : 'Seccionado de la parte anterior del animal, es un corte ideal para hacerlo en la parrilla o en el horno, relleno',
             "category": 'corte'
     
         },
@@ -89,7 +89,7 @@ const DATABASE = [
             "cajas": 7,
             "img": './imgs/corazon.jpg',
             "precio" : 80,
-            "descripcion" : '',
+            "descripcion" : 'Menudencia que acompaña cualquier parrilla, como entrada, o acompañamiento de plato principal',
             "category": 'menudencia'
             
     

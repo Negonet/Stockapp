@@ -22,14 +22,14 @@ const Item = ( {item} ) => {
 
                                         <p className="text-gray-700 text-base">Destino: {item.destino}</p>
 
-                                        <p className="text-gray-700 text-base">{item.descripcion}</p>
+                                        <p className="text-gray-700 hidden text-base">{item.descripcion}</p>
                             
                                         <p className="text-gray-700 hidden text-base">{item.kg}</p>
                                 
                                         <p className="text-gray-700 text-base">Cantidad: {item.cajas}</p>
 
                                         
-                                        <p className="text-gray-700 text-base">Precio unitario: $ {item.precio}</p>
+                                        <p className="text-gray-700 hidden text-base">Precio unitario: $ {item.precio}</p>
                                         
                                         <button className="btn_detalle rounded-lg"><Link to={`/detail/${item.id}`}>Ver detalle</Link></button>
                                         </div>
