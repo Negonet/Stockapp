@@ -10,6 +10,8 @@ const DATABASE = [
             "kg": 150,
             "cajas": 15,
             "img": './imgs/cogote.png',
+            "precio" : 140,
+            "descripcion" : 'Extraido del cuello del animal, esta sección se utiliza preferentemente en las comidas de invierno.',
             "category": 'menudencia'
         },
         {
@@ -20,6 +22,8 @@ const DATABASE = [
             "kg": 200,
             "cajas": 20,
             "img": './imgs/costilla.jpg',
+            "precio" : 170,
+            "descripcion" : '',
             "category": 'corte'
     
         },
@@ -31,6 +35,8 @@ const DATABASE = [
             "kg": 50,
             "cajas": 3,
             "img": './imgs/picana.jpg',
+            "precio" : 340,
+            "descripcion" : '',
             "category": 'corte'
     
         },
@@ -42,6 +48,8 @@ const DATABASE = [
             "kg": 100,
             "cajas": 10,
             "img": './imgs/short_rack.jpg',
+            "precio" : 480,
+            "descripcion" : '',
             "category": 'corte'
     
         },
@@ -53,6 +61,8 @@ const DATABASE = [
             "kg": 230,
             "cajas": 23,
             "img": './imgs/pierna.jpg',
+            "precio" : 235,
+            "descripcion" : '',
             "category": 'corte'
             
     
@@ -65,6 +75,8 @@ const DATABASE = [
             "kg": 90,
             "cajas": 8,
             "img": './imgs/paleta.jpg',
+            "precio" : 215,
+            "descripcion" : '',
             "category": 'corte'
     
         },
@@ -76,6 +88,8 @@ const DATABASE = [
             "kg": 65,
             "cajas": 7,
             "img": './imgs/corazon.jpg',
+            "precio" : 80,
+            "descripcion" : '',
             "category": 'menudencia'
             
     

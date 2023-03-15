@@ -22,7 +22,7 @@ export const ItemList = ( {items} ) => {
                                 
              </div>
 
-        <Contador/>
+        
         </div>
 
     )

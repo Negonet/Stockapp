@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { askProductId } from "../../helpers/askData";
-
+import { Link } from "react-router-dom";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 export const ItemDetailContainer = () => {
@@ -13,9 +14,7 @@ export const ItemDetailContainer = () => {
 
     const { itemId } = useParams()
     
-    console.log(itemId)
-    console.log(item)
-
+    
     useEffect (() => {
         setLoading(true)
 
@@ -32,7 +31,13 @@ export const ItemDetailContainer = () => {
     return (
 
         <div className="">
-            <h2 className="text-white text-xl"> Item Detail Container</h2>
+           {
+
+                loading ? <h2 className="text-white text-lg font-bold">Cargando..</h2>
+                    :<ItemDetail item={item}/>
+                                      
+
+           }
         </div>
     )
 }

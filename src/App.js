@@ -1,4 +1,4 @@
-import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetalContainer.js";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.js";
 import ItemListContainer from "./components/itemListContainer/itemListContainer.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Banner from "./components/Banner/Banner.js"

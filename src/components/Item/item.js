@@ -9,7 +9,7 @@ const Item = ( {item} ) => {
             <div className="flex">
             <div className="card bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
                                         
-                                        <Link to="/">
+                                        <Link>
                                          <img className="rounded-lg" src={item.img} alt={item.name}/>
                                         </Link>
                                         <div className="px-6 py-4">  
@@ -21,10 +21,15 @@ const Item = ( {item} ) => {
                                         <p className="text-gray-700 text-base">Cliente: {item.cliente}</p>
 
                                         <p className="text-gray-700 text-base">Destino: {item.destino}</p>
+
+                                        <p className="text-gray-700 text-base">{item.descripcion}</p>
                             
                                         <p className="text-gray-700 hidden text-base">{item.kg}</p>
                                 
                                         <p className="text-gray-700 text-base">Cantidad: {item.cajas}</p>
+
+                                        
+                                        <p className="text-gray-700 text-base">Precio unitario: $ {item.precio}</p>
                                         
                                         <button className="btn_detalle rounded-lg"><Link to={`/detail/${item.id}`}>Ver detalle</Link></button>
                                         </div>
