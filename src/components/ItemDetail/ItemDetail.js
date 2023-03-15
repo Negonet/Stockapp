@@ -13,7 +13,7 @@ const ItemDetail = ({ item }) => {
 
     const handleVolver = () => {
 
-        window.location.replace("/ItemListContainer")
+        navigate("/ItemListContainer")
     }
        
 
