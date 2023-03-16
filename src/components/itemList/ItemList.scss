@@ -9,7 +9,11 @@ div {
 
 
         button:hover{
-            background-color: bisque;
+            
+                background-color: bisque;
+                color: black;
+                transition: 500ms;
+            
             
             
             p:hover {
@@ -22,7 +26,7 @@ div {
      // background-color: black;
         height: auto;
      // display: flex;
-        max-width: 900px;
+        //max-width: 900px;
         overflow-x: hidden;
     }
 

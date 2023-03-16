@@ -8,13 +8,17 @@ export const ItemList = ( {items} ) => {
     return (
 
         <div className="">
-             <h2 className="text-white text-center text-2xl">Listado de productos</h2>
-               
+                <div className=" h-30 items-center bg-slate-50 p4 shadow-lg">
+                <h2 className=" text-gray-700 pt-2 shadow-lg font-mono text-center text-3xl">Listado de productos</h2>
+                
                 <div className="flex items-center">
-                    <h2 className="text-white text-center text-xl">Filtrar por:</h2>
+                    <h2 className="text-gray-700 pl-6 text-center text-xl">Filtrar por:</h2>
                     <button className="rounded-lg"><Link to="/products/menudencia"><p>Menudencia</p></Link></button>
                     <button className="rounded-lg"><Link to="/products/corte"><p>Cortes</p></Link></button>
                 </div>
+                </div>
+               
+               
             <hr/>
             
                                    

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import Contador from "../Contador/Contador"
-
+import './ItemDetail.scss'
 
 
 
@@ -19,9 +19,14 @@ const ItemDetail = ({ item }) => {
 
     return (
 
-        <div className="grid grid-cols-3 itemCard">
+        <div className="grid grid-cols-3">
+
+                
         
-        <div className="card  bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
+                <div className="card  bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
+
+
+                                        
                                         
                                         <Link>
                                             <img className="rounded-lg" src={item.img} alt={item.name}/>
