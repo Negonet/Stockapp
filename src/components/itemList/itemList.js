@@ -7,7 +7,7 @@ export const ItemList = ( {items} ) => {
     
     return (
 
-        <div className="cuadrante">
+        <div className="">
              <h2 className="text-white text-xl">Listado de productos</h2>
              <button className="rounded-lg"><Link to="/products/menudencia"><p>Menudencia</p></Link></button>
              <button className="rounded-lg"><Link to="/products/corte"><p>Cortes</p></Link></button>
@@ -15,7 +15,7 @@ export const ItemList = ( {items} ) => {
             <hr/>
             
                                    
-            <div className="itemCard" > 
+            <div className="grid grid-cols-3 itemCard" > 
                           {items.map((producto) => <Item key={producto.id} item={producto}/>) }
                             
 
