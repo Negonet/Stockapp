@@ -31,6 +31,11 @@ export const ItemDetailContainer = () => {
     return (
 
         <div className="">
+            
+             <h2 className="text-white text-center pt-5 text-2xl">Listado de productos</h2>
+
+             <hr/>
+             <div className="grid grid-cols-3 itemCard" >
            {
 
                 loading ? <h2 className="text-white text-lg font-bold">Cargando..</h2>
@@ -38,6 +43,7 @@ export const ItemDetailContainer = () => {
                                       
 
            }
+             </div>
         </div>
     )
 }

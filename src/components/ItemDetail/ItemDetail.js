@@ -19,7 +19,9 @@ const ItemDetail = ({ item }) => {
 
     return (
 
-        <div className="card bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
+        <div className="grid grid-cols-3 itemCard">
+        
+        <div className="card  bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
                                         
                                         <Link>
                                             <img className="rounded-lg" src={item.img} alt={item.name}/>
@@ -59,7 +61,7 @@ const ItemDetail = ({ item }) => {
 
         
         </div>
-
+        </div>
     )
 }
 
