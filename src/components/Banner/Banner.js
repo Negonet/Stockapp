@@ -5,8 +5,9 @@ const Banner = () => {
 
     return (
         <div className="image flex">
-            <p className="bg-slate-500 p-1 text-white">HOLA MUNDO</p>
-            <button className="bg-gray-500 text-center hover:bg-white rounded-lg text-white">click me</button>
+            <div className="fondotext rounded-2xl"><p className=" font-link  drop-shadow-[0_1.8px_1.8px_rgba(0,0,0,0.8)] p-1 rounded-lg text-center text-white text-5xl">Hoy es un excelente dia para comerte la parrilla entera, pero empecemos por la carne: </p>
+            </div>
+            
         </div>
     )
 }

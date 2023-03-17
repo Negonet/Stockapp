@@ -1,16 +1,19 @@
 div.image{
-    background-image: url("../../../public/imgs/banner1.jpg");
+    background-image: url("../../../public/imgs/lamb1.png");
     background-repeat: no-repeat;
     background-position: center;
     align-items: center;
     height: 483px;
     justify-content: center;
+    text-align: center;
+    //filter: brightness(50%);
         
-        button:hover {
-            background-color: bisque;
-            color: black;
-            transition: 500ms;
+        p {
+            width: 800px;
         }
-
 }
 
+.font-link {
+    font-family: 'Lobster', cursive;
+
+  }
