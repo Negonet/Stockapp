@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { askProductId } from "../../helpers/askData";
-import { Link } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import './ItemDetailContainer.scss'
 
+import ItemDetail from "../ItemDetail/ItemDetail";
+import '../ItemDetailContainer/ItemDetailContainer.scss'
 export const ItemDetailContainer = () => {
 
 
@@ -30,22 +29,30 @@ export const ItemDetailContainer = () => {
 
     return (
 
-        <div className="listado_items">
-            
-            <div className=" h-30 items-center bg-slate-50 p4 shadow-lg">
-                <h2 className=" text-gray-700 pt-2 shadow-lg font-mono text-center text-3xl">Listado de productos</h2>
-                </div>
+        <div className="detailListing items-center">
 
-             <hr/>
-             <div className="grid grid-cols-3 itemCard" >
+                <div className=" h-30 bg-slate-50 p-2 shadow-lg">
+                <h2 className=" text-gray-700 shadow-lg font-mono text-center text-3xl">Listado de productos</h2>
+                
+                </div>
+                 
+                
+                
+            
+           
+           
+
+            <hr/>
+            <div className="" >
            {
 
-                loading ? <h2 className="text-white text-lg font-bold">Cargando..</h2>
+                loading ? <h2 className="text-white text-center text-lg font-bold">Cargando..</h2>
                     :<ItemDetail item={item}/>
                                       
 
            }
              </div>
+        
         </div>
     )
 }

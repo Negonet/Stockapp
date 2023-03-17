@@ -9,7 +9,7 @@ export const ItemList = ( {items} ) => {
 
         <div className="">
                 <div className=" h-30 items-center bg-slate-50 p4 shadow-lg">
-                <h2 className=" text-gray-700 pt-2 shadow-lg font-mono text-center text-3xl">Listado de productos</h2>
+                <h2 className=" text-gray-700 p-2 shadow-lg font-mono text-center text-3xl">Listado de productos</h2>
                 
                 <div className="flex items-center">
                     <h2 className="text-gray-700 pl-6 text-center text-xl">Filtrar por:</h2>

@@ -19,17 +19,17 @@ const ItemDetail = ({ item }) => {
 
     return (
 
-        <div className="grid grid-cols-3">
+        
 
                 
         
-                <div className="card  bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
+                <div className="detailcard bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
 
 
                                         
                                         
                                         <Link>
-                                            <img className="rounded-lg" src={item.img} alt={item.name}/>
+                                         <img className="rounded-lg" src={item.img} alt={item.name}/>
                                         </Link>
                                         <div className="px-6 py-4">  
                                             <p className="hidden">{item.id}</p>
@@ -66,7 +66,7 @@ const ItemDetail = ({ item }) => {
 
         
         </div>
-        </div>
+        
     )
 }
 
