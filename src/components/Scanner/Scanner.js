@@ -11,8 +11,8 @@ export const Scanner = () => {
 
     return (
 
-        <div>
-            <h2 className="text-white text-xl">Escanear Codigo</h2>
+        <div className="detailListing items-center">
+            <h2 className="text-white text-center font-mono text-4xl">Escanear Codigo de Barras/QR</h2>
             <hr/>
 
         </div>
