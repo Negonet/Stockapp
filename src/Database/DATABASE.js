@@ -7,7 +7,7 @@ const DATABASE = [
             "producto": "Cogote",
             "cliente": "Abasto",
             "destino": "Uruguay",
-            "kg": 150,
+            "kg": 22,
             "cajas": 15,
             "img": './imgs/cogote.png',
             "precio" : 140,
@@ -19,7 +19,7 @@ const DATABASE = [
             "producto": "Asado",
             "cliente": "Abasto",
             "destino": "Uruguay",
-            "kg": 200,
+            "kg": 10,
             "cajas": 20,
             "img": './imgs/costilla.jpg',
             "precio" : 170,
@@ -32,11 +32,11 @@ const DATABASE = [
             "producto": "Cuadril",
             "cliente": "Abasto",
             "destino": "Uruguay",
-            "kg": 50,
+            "kg": 15,
             "cajas": 3,
             "img": './imgs/picana.jpg',
             "precio" : 340,
-            "descripcion" : 'Cuadril, o picaña, es un corte de pulpa sin hueso, ideal para hacerlo en la parrilla o en el horno, relleno',
+            "descripcion" : 'Cuadril, o picaña, es un corte de pulpa sin hueso, ideal para hacerlo en la parrilla o en el horno, relleno.',
             "category": 'corte'
     
         },
@@ -45,7 +45,7 @@ const DATABASE = [
             "producto": "Short Rack",
             "cliente": "Open",
             "destino": "Brasil",
-            "kg": 100,
+            "kg": 8,
             "cajas": 10,
             "img": './imgs/short_rack.jpg',
             "precio" : 480,
@@ -58,11 +58,11 @@ const DATABASE = [
             "producto": "Pierna",
             "cliente": "Open",
             "destino": "Brasil",
-            "kg": 230,
+            "kg": 18,
             "cajas": 23,
             "img": './imgs/pierna.jpg',
             "precio" : 235,
-            "descripcion" : 'También conocido como Pernil con Hueso, es un corte ideal para hacerlo en la parrilla o en el horno, relleno',
+            "descripcion" : 'También conocido como Pernil con Hueso, es un corte ideal para hacerlo en la parrilla o en el horno, relleno.',
             "category": 'corte'
             
     
@@ -72,11 +72,11 @@ const DATABASE = [
             "producto": "Paleta",
             "cliente": "Siegue",
             "destino": "Inglaterra",
-            "kg": 90,
+            "kg": 17,
             "cajas": 8,
             "img": './imgs/paleta.jpg',
             "precio" : 215,
-            "descripcion" : 'Seccionado de la parte anterior del animal, es un corte ideal para hacerlo en la parrilla o en el horno, relleno',
+            "descripcion" : 'Seccionado de la parte anterior del animal, es un corte ideal para hacerlo en la parrilla o en el horno, relleno.',
             "category": 'corte'
     
         },
@@ -85,11 +85,11 @@ const DATABASE = [
             "producto": "Corazon",
             "cliente": "Abasto",
             "destino": "Uruguay",
-            "kg": 65,
+            "kg": 20,
             "cajas": 7,
             "img": './imgs/corazon.jpg',
             "precio" : 80,
-            "descripcion" : 'Menudencia que acompaña cualquier parrilla, como entrada, o acompañamiento de plato principal',
+            "descripcion" : 'Menudencia que acompaña cualquier parrilla, como entrada, o acompañamiento de plato principal.',
             "category": 'menudencia'
             
     
