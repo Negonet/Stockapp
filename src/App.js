@@ -31,8 +31,7 @@ function App () {
           <Route path="/ItemListContainer/" element={ <ItemListContainer /> }/>
           <Route path="/detail/:itemId" element={ <ItemDetailContainer /> }/>
           <Route path="/Cart/" element={ <Cart /> }/>
-          <Route path="/Ticket" element={ <Ticket /> } />
-          <Route path="/document/:ticketId" element={ <Checkout /> }/>
+          <Route path="/Ticket/:ticketId" element={ <Ticket /> }/>
           <Route path="/Checkout" element={ <Checkout />}/>
           <Route path="/Clientes" element={ <Clientes /> }/>
           <Route path="/Scanner" element={<Scanner /> }/>

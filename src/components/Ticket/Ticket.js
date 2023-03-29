@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { CartContext } from "../context/CartContex"
 import { db } from "../../firebase/config"
 import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore"
@@ -11,14 +11,34 @@ import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore"
 export const Ticket = () => {
     
     const {cart, purchaseDone, tBuy, tKg, itemQuantity} = useContext(CartContext)
+    const [ ticketData, setTicketData] = useState([])
+    //const [loading, setLoading] = useState(true)
 
-    const [loading, setLoading] = useState(true)
+    const {ticketId} = useParams()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    //console.log(ticketId)
 
+    useEffect (() => {
+       
+
+        const docRef = doc(db, "Ordenes de compras", ticketId)
+        
+        getDoc(docRef)
+            .then((doc) => {
+                //console.log(doc.id)
+                //console.log(doc.data())
+                //console.log(doc.data().cliente.nombre)
+                
+                setTicketData({
+                    
+                    id: doc.id,
+                    ...doc.data()
+                })
+            }) 
+            
+    }, [])
     
-
-
-    
-    
+   console.log(ticketData)
 
     return (
         <div className="w-full lg:mb-[90px] max-sm:mb-[60px]">
@@ -32,30 +52,33 @@ export const Ticket = () => {
                         <p className="hidden"></p>
                         <div className="grid mx-1 sm:w-[600px] grid-cols-2 grid-rows-2 font-base text-gray-700 mb-2">
                             <div className="row-start-1 flex">
-                                <img src='./imgs/logo.png' alt='logo' className="rounded-lg h-[60px] w-[60px]" />
+                                <Link><img src='./imgs/logo.png' alt='logo' className="rounded-lg h-[60px] w-[60px]" /></Link>
                                 <p className="ml-2 text-white">
                                 
-                                    
+                                   
                                     
                                 </p>
                             </div>
                             <div className="cols-start-2 relative">
-                                <p className="absolute text-w right-2"></p>
+                                <p className="absolute text-w text-gray-100 right-2">N° de Ticket: <span className="text-gray-300">{ticketId}</span></p>
                             </div>
+                            
                             <ul className="row-start-2 text-gray-200 max-sm:text-xs text-base row h-20">
                                 <li>
-                                Cliente/Empresa
+                                {/* {ticketData.id} */}
                                 </li>
                                 <li>
-                                Direccion
+
+                                {/* {ticketData.cliente.direccion} */}
                                 </li>
                                 <li>
-                                Email
+                                {/* {ticketData.cliente.email} */}
                                 </li>
                                 <li>
-                                Telefono
+                                {/* {ticketData.cliente.telefono} */}
                                 </li>
                             </ul>
+                            
                         </div> 
                         <div className="max-sm:px-0 px-0 py-5 mt-5 sm:w-[600px] sm:mx-auto relative max-sm:mx-0 mx-auto overflow-x-auto max-sm:w-[390px] shadow-xl w-[500px]">
                             <table className="w-full rounded-xl text-sm text-left text-gray-400">

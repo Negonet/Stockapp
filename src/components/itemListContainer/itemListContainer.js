@@ -38,7 +38,7 @@ const ItemListContainer = ( ) => {
 
     }, [categoryId])
 
-
+    //console.log(product)
 
     return (
         <div className='max-w-[900px] max-sm:mt-[20px] mt-[50px] mb-[100px] mx-auto'>

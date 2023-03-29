@@ -103,8 +103,8 @@ const Checkout = () => {
             })
     }
 
-    const showTicket = (orden) => {
-        console.log(orden)
+    const showTicket = () => {
+        console.log()
         let timerInterval
         Swal.fire({
             title: 'Generando ticket',
@@ -139,13 +139,13 @@ const Checkout = () => {
                     cancelButtonText: 'Volver'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = '/ItemListContainer'
+                            navigate(`/ItemListContainer`)
                             emptyCart()
 
                         } else if (result.isDenied) {
                             
                            
-                                window.location.href = '/Ticket'
+                                navigate(`/Ticket/${orderId}`)
                         
                         } 
                     })
