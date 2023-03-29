@@ -60,7 +60,7 @@ export const Ticket = () => {
                                 </p>
                             </div>
                             <div className="cols-start-2 relative">
-                                <p className="absolute text-w text-gray-100 right-2">N° de Ticket: <span className="text-gray-300">{ticketId}</span></p>
+                                <p className="absolute text-gray-100 right-2 text-xs">Ticket N°: <span className="text-gray-300 text-xs">{ticketId}</span></p>
                             </div>
                             
                             <ul className="row-start-2 text-gray-200 max-sm:text-xs text-base row h-20">
