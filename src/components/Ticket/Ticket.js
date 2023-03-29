@@ -10,7 +10,7 @@ import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore"
 
 export const Ticket = () => {
     
-    const {cart, purchaseDone, tBuy, tKg, itemQuantity} = useContext(CartContext)
+    const {cart, purchaseDone, tBuy, tKg, itemQuantity, emptyCart} = useContext(CartContext)
     const [ ticketData, setTicketData] = useState([])
     //const [loading, setLoading] = useState(true)
 
@@ -164,7 +164,7 @@ export const Ticket = () => {
                         <hr className="h-1 mx-auto mt-5 mb-1 bg-gray-200 border-0 rounded"/>
                         <Link className="justify-between" to='/'>
                         <button className="bg-green-600 py-[2px] px-[5px] max-sm:mb-2 mt-4 mx-[10px] rounded-md text-gray-100 border-[0.1px] border-gray-300 hover:bg-green-500 hover:text-white ease-in-out duration-300" onClick={purchaseDone}>Finalizar</button>
-                        <button className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] rounded-md text-gray-400 hover:bg-slate-600 shadow-lg border-[0.1px] border-gray-600 hover:text-white ease-in-out duration-300">Imprimir</button>
+                        <button className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] rounded-md text-gray-400 hover:bg-slate-600 shadow-lg border-[0.1px] border-gray-600 hover:text-white ease-in-out duration-300" onClick={purchaseDone}>Imprimir</button>
                         </Link>
                     </div>
                 </div>
