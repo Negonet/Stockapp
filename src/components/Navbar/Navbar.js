@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center max-sm:h-[60px] h-24 max-w-[1240px] mx-auto px-4 shadow-lg">
                 <div className="flex item-center">
                     <div>
-                        <img src='/imgs/logo.png' alt='logo' className="rounded-lg mt-[6px] max-sm:w-[45px] max-w-[60px]" />   
+                        <img src='/imgs/logo2.png' alt='logo' className="rounded-lg mt-[6px] max-sm:w-[45px] max-w-[60px]" />   
                     </div>
                     <p className="p-4 text-3xl text-gray-100 max-sm:text-sm max-sm:px-2 font-lobster ">StockApp.</p>
                 </div>
