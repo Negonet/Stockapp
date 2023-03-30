@@ -38,10 +38,10 @@ const Navbar = () => {
                             <p className="p-4 text-xl text-gray-100 max-sm:text-sm max-sm:px-2 font-serif">StockApp.</p>
                         </div>
                         <ul className="shadow-lg hidden bg-white/10 border-[0.1px] border-gray-500 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg md:flex font-bold">
-                            <li className="px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/" className="hover:text-gray-200">Inicio</Link></li>
-                            <li className="px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Scanner" className="hover:text-gray-200">Escanear</Link></li>
-                            <li className="px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400 hover:text-base"><Link to="/ItemListContainer" className="hover:text-gray-200">Productos</Link></li>
-                            <li className="px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Clientes" className="hover:text-gray-200">Clientes</Link></li>
+                            <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/" className="hover:text-gray-200">Inicio</Link></li>
+                            <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Scanner" className="hover:text-gray-200">Escanear</Link></li>
+                            <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400 hover:text-base"><Link to="/ItemListContainer" className="hover:text-gray-200">Productos</Link></li>
+                            <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Clientes" className="hover:text-gray-200">Clientes</Link></li>
 
                         </ul>
                         <form className="flex max-sm:mr-2 items-center">   
@@ -75,10 +75,10 @@ const Navbar = () => {
                             
                                     
                                        <ul onClick={handleHideNav} className="p-4 ${hiddenNav}"><li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/I">Inicio</Link></li>
-                                            <li className="p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="Scanner">Escanear</Link></li>
-                                            <li className="p-5 border-b border-[#dbcfcf] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/ItemListContainer">Productos</Link></li>
-                                            <li className="p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/Clientes">Clientes</Link></li>
-                                            <li className="p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link onClick={handleHideNav} className={hiddenNav}>Cancelar</Link></li>
+                                            <li className="efecto p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="Scanner">Escanear</Link></li>
+                                            <li className="efecto p-5 border-b border-[#dbcfcf] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/ItemListContainer">Productos</Link></li>
+                                            <li className="efecto p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/Clientes">Clientes</Link></li>
+                                            <li className="efecto p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link onClick={handleHideNav} className={hiddenNav}>Cancelar</Link></li>
                                         </ul>
                                      
 
