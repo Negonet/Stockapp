@@ -36,7 +36,7 @@ export const Ticket = () => {
             
     }, [])
     
-//    console.log(ticketData)
+//const fechaTicket = (ticketData.fecha)
 
     return (
         <div>
@@ -46,7 +46,7 @@ export const Ticket = () => {
                 <h2 className="text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Ticket </h2>
           
             </div>
-            { loading ? <div></div> : 
+            { loading ? <p className="text-gray-100 text-center mt-4 text-base">Cargando Documento...</p> : 
             <div className="grid mx-auto mt-3 max-sm:mx-auto max-sm:w-[400px] max-w-[900px] place-items-center">
                 <div className="my-[20px] max-sm:p-1 mx-auto max-h-fit bg-white/10 border-[0.1px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg">  
                     <div className="p-0">  
@@ -54,14 +54,15 @@ export const Ticket = () => {
                         <div className="grid mx-1 sm:w-[600px] grid-cols-2 grid-rows-2 font-base text-gray-700 mb-2">
                             <div className="row-start-1 flex">
                                 <Link><img src='/imgs/logo.png' alt='logo' className="rounded-lg h-[60px] w-[60px]" /></Link>
-                                <p className="ml-2 text-white">
+                                <p className="absolute ml-2 left-[72px] top-6 text-2xl font-lobster text-white">
                                 
-                                   
+                                   Stockapp.
                                     
                                 </p>
                             </div>
                             <div className="cols-start-2 relative">
-                                <p className="absolute text-gray-100 right-2 text-xs">Ticket N°: <span className="text-gray-300 text-xs">{ticketId}</span></p>
+                                <p className="absolute text-gray-200 right-0 top-4 text-xs">Fecha: {ticketData.fecha}</p>
+                                <p className="absolute text-gray-100 right-0 top-10 text-xs">Ticket <span className="max-sm:hidden">N°:</span> <span className="text-gray-300 text-xs">{ticketId}</span></p>
                             </div>
                             
                             <ul className="row-start-2 text-gray-200 max-sm:text-xs text-base row h-20">
@@ -89,7 +90,7 @@ export const Ticket = () => {
                                 <thead className="text-[10px] border-b-[0.1px] border-gray-500 text-gray-400 uppercase bg-gray-500 ">
                                     <tr className="bg-gray-700 max-sm:text-gray-400">
                                         <th scope="col" className="rounded-tl-lg text-center max-sm:px-3 px-5 py-1">
-                                            Producto
+                                        Prod<span className="max-sm:hidden">ucto</span>
                                         </th>
                                         <th scope="col" className="text-center max-sm:px-1 px-2 py-1">
                                             Destino

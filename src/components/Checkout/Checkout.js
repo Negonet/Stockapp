@@ -64,7 +64,7 @@ const Checkout = () => {
                 cantidad: prod.counter
              })),
             total: tBuy(),
-            fecha: new Date()
+            fecha: new Date().toLocaleDateString()
         }
 
         //console.log("Submit", orden)
