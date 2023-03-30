@@ -15,9 +15,7 @@ export const Ticket = () => {
     const [loading, setLoading] = useState(true)
 
     const {ticketId} = useParams()
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-    //console.log(ticketId)
-
+         
     useEffect (() => {
         setLoading(true)
 
@@ -36,15 +34,13 @@ export const Ticket = () => {
             
     }, [])
     
-//const fechaTicket = (ticketData.fecha)
+    //const fechaTicket = (ticketData.fecha)
 
     return (
         <div>
-        
             <div className="w-full lg:mb-[90px] max-sm:mb-[60px]">
                 <div className=" h-30 max-sm:mt-[20px] mt-[50px] items-center bg-slate-50 mx-auto rounded-lg max-sm:max-w-[330px] max-w-[900px] shadow-lg">
                     <h2 className="text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Ticket </h2>
-            
                 </div>
                 { loading 
                     ?   <p className="text-gray-100 text-center mt-4 text-base">Cargando Documento...</p>
@@ -178,8 +174,6 @@ export const Ticket = () => {
                         
                 }
             </div>
-        
         </div>
-            
     )
 }

@@ -4,14 +4,10 @@ import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContex"
 
 
-
 const ItemDetail = ({ item }) => {
 
     const {addToCart, isInCart} = useContext(CartContext)
-
-
     const [counter, setCounter] = useState(1)
-
     const navigate = useNavigate()
 
     const handleVolver = () => {
@@ -25,7 +21,6 @@ const ItemDetail = ({ item }) => {
             counter
             
         }
-        
         
         addToCart (itemToCart)
 
@@ -87,7 +82,6 @@ const ItemDetail = ({ item }) => {
                 <button onClick={handleVolver} className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] border-[0.1px] border-gray-500 rounded-md text-gray-400 shadow-lg hover:bg-slate-600 hover:text-white ease-in-out duration-300">Volver</button>
             </div>
         </div>
-        
     )
 }
 

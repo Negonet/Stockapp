@@ -7,7 +7,6 @@ import './Navbar.scss'
 
 
 
-
 const Navbar = () => {
 
     const [nav, setNav] = useState(false)
@@ -17,18 +16,15 @@ const Navbar = () => {
         setNav (!nav)
     }
 
-
     const handleHideNav = () => {
         setHideNav(hideNav => !hideNav)
         handleNav()
 
-        
     }
     const hiddenNav = hideNav ? 'ease-out duration-500 hidden' : ''; 
 
     return (
         <header className='header'>
-           
             <div className="flex justify-between items-center max-sm:h-[60px] h-24 max-w-[1240px] mx-auto px-4 shadow-lg">
                 <div className="flex item-center">
                     <div>
@@ -62,12 +58,10 @@ const Navbar = () => {
                     <div onClick={handleNav} className="block md:hidden">
                         {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/> }
                     </div>
-                    
                     <div className="ml-2">
                         <CartWidget/>
                     </div>
                 </div>
-                
             </div>
             <div className={nav ? "fixed md:hidden z-10 left-4 top-15 w-[60%] text-sm text-white font bg-black" : "fixed left-[-100%] ease-in duration-500" }>
                 <ul onClick={handleHideNav} className="p-4 ${hiddenNav}"><li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/I">Inicio</Link></li>
@@ -76,7 +70,6 @@ const Navbar = () => {
                     <li className="efecto p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/Clientes">Clientes</Link></li>
                     <li className="efecto p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link onClick={handleHideNav} className={hiddenNav}>Cancelar</Link></li>
                 </ul>
-            
             </div>
 
         </header>

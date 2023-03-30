@@ -4,8 +4,6 @@ import { BsFillTrashFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 
-
-
 const Cart = () => {
 
     const { cart, tBuy, tKg, itemQuantity, emptyCart, removeItemFromCart } =useContext(CartContext)
@@ -15,13 +13,11 @@ const Cart = () => {
         <div className="sm:mt-[50px] mb-[100px]">
             <div className=" h-30 max-sm:mt-[40px] mt-[50px]  max-sm:mb-[10px] items-center bg-slate-50 max-sm:w-[330px] mx-auto rounded-lg max-w-[900px] shadow-lg">
                 <h2 className="text-gray-700 p-2 shadow-lg font-mono text-center max-sm:text-base text-3xl">Tu compra</h2>
-                
             </div>
             <div className="grid md:grid-cols-2 sm:mt-[100px] mx-auto max-w-[900px] place-items-center">
                 <div className="my-[20px] mx-0 max-w-[300px] max-h-fit bg-white/10 border-[0.1px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg">
                     {
                         cart.map((prod) => (
-                        
                             <div key={prod.id} className="p-2 max-w-[200px]">  
                                 <p className="hidden">{prod.id}</p>
                                 <div className="font-bold justify-between text-gray-100 flex pl-5 text-xl mb-2">
@@ -49,24 +45,27 @@ const Cart = () => {
                         <p className="text-gray-700 text-base"><strong>Estimado Cliente:</strong></p>
                         <br/>
                         <p className="text-gray-700 text-base"> A continuacion se detalla el resumen de su compra<strong> </strong></p>
-                        
                         <br/>
                         <div className="">
                             <p className="text-gray-700 pt-8 text-base">Son Cajas: <strong>{itemQuantity()}</strong> | Peso: <strong>{tKg()} kg</strong></p>
                             <p className="text-gray-700 text-base">Valor total: <strong>$ {tBuy()},00</strong></p>
                         </div>
                         <hr className="h-1 mx-auto mt-8 mb-1 bg-gray-200 border-0 rounded md:my-3 dark:bg-gray-700"/>
-                        <Link to="/Checkout"><button className="bg-green-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-green-600 hover:text-gray-300 ease-in-out duration-200">Abonar</button></Link>
+                        <Link to="/Checkout">
+                            <button className="bg-green-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-green-600 hover:text-gray-300 ease-in-out duration-200">
+                                Abonar
+                            </button>
+                        </Link>
                         <Link to="/">
-                            <button onClick={emptyCart} className="bg-red-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-red-800 hover:text-gray-200 ease-in-out duration-200">Cancelar</button>
+                            <button onClick={emptyCart} className="bg-red-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-red-800 hover:text-gray-200 ease-in-out duration-200">
+                                Cancelar
+                            </button>
                         </Link>
                     </div>
                 </div>            
             </div>
         </div>
     )
-
 }
-
 
 export default Cart

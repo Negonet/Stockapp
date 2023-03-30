@@ -1,5 +1,3 @@
-
-
 import { useState} from "react"
 import { useEffect} from "react"
 import { ItemList } from '../itemList/itemList'
@@ -8,7 +6,6 @@ import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../firebase/config"
 
 const ItemListContainer = ( ) => {
-
     
     const [product, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -35,22 +32,16 @@ const ItemListContainer = ( ) => {
         .finally (() => {
             setLoading(false)
         })
-
     }, [categoryId])
 
-    //console.log(product)
-
     return (
-        
         <div>
-            
             <div className='max-w-[900px] max-sm:mt-[20px] mt-[50px] mb-[100px] mx-auto'>
                 { loading ? <p className="text-gray-200 text-lg text-center">Cargando items..</p>
                     : <ItemList items={product}/>                   
                 }
             </div>
         </div>
-        
     )
 }
 

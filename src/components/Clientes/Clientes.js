@@ -1,17 +1,11 @@
 
 
-
-
-
-
 export const Clientes = () => {
 
     return (
         <div>
             <div className=" h-30 max-sm:mt-[40px] my-[50px] items-center bg-slate-50 mx-auto rounded-lg max-sm:w-[330px] max-w-[900px] shadow-lg">
                 <h2 className="text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Clientes</h2>
-                
-
             </div>
 
             <div className="grid mx-auto max-w-[900px] sm:mt-[140px] place-items-center">

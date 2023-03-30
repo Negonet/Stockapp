@@ -9,12 +9,9 @@ const init = JSON.parse(localStorage.getItem('carrito')) || []
 export const CartProvider = ( {children} ) => {
 
     const [cart, setCart] = useState (init)
-
-    //console.log(cart)
     
     const addToCart = ( item ) => {
-      console.log(item)
-
+     
         if (item.cajas >= item.counter) {
         setCart ([...cart, item])
         const Toast = Swal.mixin({
@@ -48,17 +45,14 @@ export const CartProvider = ( {children} ) => {
     } 
     const itemQuantity = () => {
     return cart.reduce((acc, prod) => acc + prod.counter, 0)
-
     }
     
     const tBuy = () => {
         return cart.reduce((acc, prod) => acc + prod.counter * prod.kg * prod.precio, 0)
-    
         }
     
     const tKg = () => {
         return cart.reduce((acc, prod) => acc + prod.counter * prod.kg, 0)
-    
         }
     
     const emptyCart = () => {
@@ -80,7 +74,6 @@ export const CartProvider = ( {children} ) => {
           icon: 'warning',
           title: 'Carrito vaciado'
         })
-     
     }
 
     const purchaseDone = () => {
@@ -103,14 +96,11 @@ export const CartProvider = ( {children} ) => {
           title: 'Gracias por su preferencia!'
         })
 
-        
-
     }
 
     const removeItemFromCart = (id) => {
 
         setCart ( cart.filter((prod) => prod.id !== id))
-
       
         const Toast = Swal.mixin({
             toast: true,

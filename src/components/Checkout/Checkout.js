@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { Navigate, useNavigate, useParams } from "react-router-dom"
+import { Navigate, useNavigate} from "react-router-dom"
 import { CartContext } from "../context/CartContex"
 import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore"
 import { db } from "../../firebase/config"
@@ -8,11 +8,8 @@ import Swal from 'sweetalert2'
 
 const Checkout = () => {
 
-
     const navigate = useNavigate()
-
     const { cart, tBuy, emptyCart } = useContext (CartContext)
-
     const [orderId, setOrderId] = useState(null)
     
     const [values, setValues] = useState({
@@ -24,8 +21,7 @@ const Checkout = () => {
     })
 
     const handleInputChange = (e) => {
-        console.log(e.target.name)
-        
+                
         setValues({
             ...values,
             [e.target.name]: e.target.value
@@ -67,8 +63,6 @@ const Checkout = () => {
             fecha: new Date().toLocaleDateString()
         }
 
-        //console.log("Submit", orden)
-      
         const productosRef = collection(db, 'productos')
 
         cart.forEach((item) => {
@@ -77,7 +71,6 @@ const Checkout = () => {
 
             getDoc(docRef)
                 .then((doc) => {
-
                     if (doc.data().cajas >= item.counter) {
                         updateDoc(docRef, {
                             cajas: doc.data().cajas - item.counter
@@ -96,15 +89,11 @@ const Checkout = () => {
 
         addDoc(ordersRef, orden)
             .then((doc) => {
-                setOrderId(doc.id)
-                console.log(orden)
-                
-                
+                setOrderId(doc.id)                
             })
     }
 
     const showTicket = () => {
-        console.log()
         let timerInterval
         Swal.fire({
             title: 'Generando ticket',
@@ -122,7 +111,6 @@ const Checkout = () => {
               clearInterval(timerInterval)
                 }
             }).then((result) => {
-                
                 Swal.fire({
                     icon: 'success', 
                     title: '<b>Ticket creado correctamente<b/>',
@@ -135,7 +123,6 @@ const Checkout = () => {
                     showCancelButton: false,
                     confirmButtonText: 'Continuar',
                     denyButtonText: `Imprimir`,
-                    
                     cancelButtonText: 'Volver'
                     }).then((result) => {
                         if (result.isConfirmed) {
@@ -143,24 +130,15 @@ const Checkout = () => {
                             emptyCart()
 
                         } else if (result.isDenied) {
-                            
-                           
                                 navigate(`/Ticket/${orderId}`)
-                        
                         } 
                     })
-            })
-            
-            
-            }
-        
+                })
+        }
 
     if (orderId)  {
-        console.log(orderId)
-
-        return (
+         return (
             showTicket()
-
         )
     }        
 
@@ -171,7 +149,7 @@ const Checkout = () => {
     return (
         <div>
             <div className=" h-30 max-sm:mt-[20px] my-[50px] items-center bg-slate-50 mx-auto max-sm:w-[330px] rounded-lg max-w-[900px] shadow-lg">
-            <h2 className="text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Checkout</h2>
+                <h2 className="text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Checkout</h2>
             </div>
             <br/>
 
@@ -223,14 +201,11 @@ const Checkout = () => {
 
                     <div className="w-[220px] backgroundimg m-auto max-sm:hidden">
                           <img src="./imgs/bg.jpg" className="h-fit max-h-[250px] max-w-full"/>
-                    
                     </div>
                 </div>
             </div>
-            
         </div>
     )
-
 }
 
 export default Checkout
