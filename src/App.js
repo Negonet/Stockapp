@@ -14,8 +14,6 @@ import { Footer } from "./components/Footer/Footer.js";
 function App () {
 
   
-  
-  
     return (
 
     <CartProvider >
@@ -23,7 +21,6 @@ function App () {
       <BrowserRouter>
           
         <Navbar />
-        
 
         <Routes>
           <Route path="/" element={ <Inicio/> }/>
