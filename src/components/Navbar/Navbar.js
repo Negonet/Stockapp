@@ -3,7 +3,7 @@ import CartWidget from "../CartWidget/CartWidget"
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai"
 import {useState} from "react"
 import { Link } from "react-router-dom"
-
+import './Navbar.scss'
 
 
 
@@ -32,9 +32,9 @@ const Navbar = () => {
                     
                     <div className="flex justify-between items-center max-sm:h-[60px] h-24 max-w-[1240px] mx-auto px-4 shadow-lg">
                         <div className="flex item-center">
-                            <Link>
-                                <img src='./imgs/logo.png' alt='logo' className="rounded-lg max-sm:mt-[6px] max-sm:w-[45px] max-w-[60px]" />   
-                            </Link>
+                            <div>
+                                <img src='/imgs/logo.png' alt='logo' className="rounded-lg max-sm:mt-[6px] max-sm:w-[45px] max-w-[60px]" />   
+                            </div>
                             <p className="p-4 text-xl text-gray-100 max-sm:text-sm max-sm:px-2 font-serif">StockApp.</p>
                         </div>
                         <ul className="shadow-lg hidden bg-white/10 border-[0.1px] border-gray-500 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg md:flex font-bold">

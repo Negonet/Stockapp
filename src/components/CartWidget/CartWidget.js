@@ -9,7 +9,7 @@ const CartWidget = () => {
 
     return (
         <Link to="/cart" className="w-[60px] ml-2">
-            <img className='max-w-[50px] float-left rounded-2xl max-sm:w-[35px] max-sm:my-[6px] shadow-xl' src='./imgs/cart.jpg'/>
+            <img className='max-w-[50px] float-left rounded-2xl max-sm:w-[35px] max-sm:my-[6px] shadow-xl' src='/imgs/cart.jpg'/>
             <span className="float-right font-bold">{itemQuantity()}</span>
         </Link>
     )

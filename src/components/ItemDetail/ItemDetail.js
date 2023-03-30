@@ -39,11 +39,11 @@ const ItemDetail = ({ item }) => {
                 
        
     <div className="m-[20px] mb-20 max-sm:mb-10 bg-white/10 border-[0.5px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg max-w-[800px] p-2 rounded-lg overflow-hidden shadow-lg"> 
-
-        <Link >
-            <img src={item.img} alt={item.producto} className="rounded-lg w-full h-[180px]" /> 
-        </Link>
-        <div className="px-2 py-2">  
+        <div className="sm:grid sm:grid-cols-2 gap-4 px-2 py-2">  
+        <div className="cols-start-1">
+            <img src={item.img} alt={item.producto} className="rounded-lg w-[400px] h-auto" /> 
+        </div>
+            <div className="max-sm:mt-4 cols-start-2">
             <p className="hidden">{item.id}</p>
             <div className="font-bold text-gray-100 text-xl mb-2">
                 <h4>{item.producto}</h4>
@@ -62,8 +62,10 @@ const ItemDetail = ({ item }) => {
                     
                 </div>
 
-                <hr className="mt-4"/>
+                <hr className="mt-4 sm:hidden"/>
                 <br/>
+                </div>
+                </div>
                 <div className="mx-[5px] max-w-[800px] bg-white/10 border-[0.1px] border-gray-400 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg">
                     <p className="text-xl font-bold text-gray-100 mb-4">
                     Esta compra
@@ -99,7 +101,7 @@ const ItemDetail = ({ item }) => {
 
                     <button onClick={handleVolver} className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] border-[0.1px] border-gray-500 rounded-md text-gray-400 shadow-lg hover:bg-slate-600 hover:text-white ease-in-out duration-300">Volver</button>
                 </div>
-        </div>
+        
 
         
     </div>

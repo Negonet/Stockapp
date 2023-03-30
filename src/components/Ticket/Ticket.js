@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { CartContext } from "../context/CartContex"
 import { db } from "../../firebase/config"
-import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore"
+import { getDoc, doc } from "firebase/firestore"
 
 
 
@@ -12,47 +12,48 @@ export const Ticket = () => {
     
     const {cart, purchaseDone, tBuy, tKg, itemQuantity, emptyCart} = useContext(CartContext)
     const [ ticketData, setTicketData] = useState([])
-    //const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     const {ticketId} = useParams()
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
     //console.log(ticketId)
 
     useEffect (() => {
-       
+        setLoading(true)
 
         const docRef = doc(db, "Ordenes de compras", ticketId)
         
         getDoc(docRef)
             .then((doc) => {
-                //console.log(doc.id)
-                //console.log(doc.data())
-                //console.log(doc.data().cliente.nombre)
-                
+             
                 setTicketData({
                     
                     id: doc.id,
                     ...doc.data()
                 })
             }) 
+            .finally(() => setLoading(false))
             
     }, [])
     
-   console.log(ticketData)
+//    console.log(ticketData)
 
     return (
+        <div>
+        
         <div className="w-full lg:mb-[90px] max-sm:mb-[60px]">
             <div className=" h-30 max-sm:mt-[20px] mt-[50px] items-center bg-slate-50 mx-auto rounded-lg max-sm:max-w-[330px] max-w-[900px] shadow-lg">
                 <h2 className="text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Ticket </h2>
-            
+          
             </div>
+            { loading ? <div></div> : 
             <div className="grid mx-auto mt-3 max-sm:mx-auto max-sm:w-[400px] max-w-[900px] place-items-center">
                 <div className="my-[20px] max-sm:p-1 mx-auto max-h-fit bg-white/10 border-[0.1px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg">  
                     <div className="p-0">  
                         <p className="hidden"></p>
                         <div className="grid mx-1 sm:w-[600px] grid-cols-2 grid-rows-2 font-base text-gray-700 mb-2">
                             <div className="row-start-1 flex">
-                                <Link><img src='./imgs/logo.png' alt='logo' className="rounded-lg h-[60px] w-[60px]" /></Link>
+                                <Link><img src='/imgs/logo.png' alt='logo' className="rounded-lg h-[60px] w-[60px]" /></Link>
                                 <p className="ml-2 text-white">
                                 
                                    
@@ -65,17 +66,20 @@ export const Ticket = () => {
                             
                             <ul className="row-start-2 text-gray-200 max-sm:text-xs text-base row h-20">
                                 <li>
-                                {/* {ticketData.id} */}
+                                    <div>
+                              
+                                </div>
                                 </li>
+                                Cliente {ticketData.cliente.nombre}
                                 <li>
 
-                                {/* {ticketData.cliente.direccion} */}
+                                Direccion {ticketData.cliente.direccion}
                                 </li>
                                 <li>
-                                {/* {ticketData.cliente.email} */}
+                                E-mail {ticketData.cliente.email}
                                 </li>
                                 <li>
-                                {/* {ticketData.cliente.telefono} */}
+                                Telefono {ticketData.cliente.telefono}
                                 </li>
                             </ul>
                             
@@ -169,7 +173,9 @@ export const Ticket = () => {
                     </div>
                 </div>
             </div>
+            }
         </div>
-        
+    
+    </div>
     )
 }
