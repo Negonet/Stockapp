@@ -41,10 +41,15 @@ const ItemListContainer = ( ) => {
     //console.log(product)
 
     return (
-        <div className='max-w-[900px] max-sm:mt-[20px] mt-[50px] mb-[100px] mx-auto'>
+        <div>
+        { loading 
+            ?   <p>Cargando items..</p>
+            :   <div className='max-w-[900px] max-sm:mt-[20px] mt-[50px] mb-[100px] mx-auto'>
            
-        <ItemList items={product}/>                   
+                <ItemList items={product}/>                   
             
+                </div>
+        }
         </div>
     )
 }
