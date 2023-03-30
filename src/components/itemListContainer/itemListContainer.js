@@ -42,14 +42,14 @@ const ItemListContainer = ( ) => {
 
     return (
         <div>
-        { loading 
-            ?   <p>Cargando items..</p>
-            :   <div className='max-w-[900px] max-sm:mt-[20px] mt-[50px] mb-[100px] mx-auto'>
-           
-                <ItemList items={product}/>                   
+            { loading 
+                ?   <p>Cargando items..</p>
+                :   <div className='max-w-[900px] max-sm:mt-[20px] mt-[50px] mb-[100px] mx-auto'>
             
-                </div>
-        }
+                    <ItemList items={product}/>                   
+                
+                    </div>
+            }
         </div>
     )
 }
