@@ -58,7 +58,7 @@ const Cart = () => {
                         </Link>
                         <Link to="/">
                             <button onClick={emptyCart} className="bg-red-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-red-800 hover:text-gray-200 ease-in-out duration-200">
-                                Cancelar
+                                Cancelar Compra
                             </button>
                         </Link>
                     </div>

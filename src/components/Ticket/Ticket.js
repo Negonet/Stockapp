@@ -10,11 +10,11 @@ import { getDoc, doc } from "firebase/firestore"
 
 export const Ticket = () => {
     
-    const {cart, purchaseDone, tBuy, tKg, itemQuantity, emptyCart} = useContext(CartContext)
+    const { cart, purchaseDone, tBuy, tKg, itemQuantity } = useContext(CartContext)
     const [ ticketData, setTicketData] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const {ticketId} = useParams()
+    const { ticketId } = useParams()
          
     useEffect (() => {
         setLoading(true)

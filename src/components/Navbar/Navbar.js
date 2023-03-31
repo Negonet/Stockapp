@@ -1,14 +1,16 @@
 
 import CartWidget from "../CartWidget/CartWidget"
-import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai"
-import {useState} from "react"
+import {AiOutlineClose, AiOutlineMenu, AiOutlineExport} from "react-icons/ai"
+import {useContext, useState} from "react"
 import { Link } from "react-router-dom"
 import './Navbar.scss'
+import { LoginContext } from "../context/LoginContext"
 
 
 
 const Navbar = () => {
 
+    const { user, logout } = useContext(LoginContext)
     const [nav, setNav] = useState(false)
     const [hideNav, setHideNav] = useState(false)
 
@@ -26,11 +28,12 @@ const Navbar = () => {
     return (
         <header className='header'>
             <div className="flex justify-between items-center max-sm:h-[60px] h-24 max-w-[1240px] mx-auto px-4 shadow-lg">
-                <div className="flex item-center">
+                <div className="flex">
                     <div>
-                        <img src='/imgs/logo2.png' alt='logo' className="rounded-lg mt-[6px] max-sm:w-[45px] max-w-[60px]" />   
+                        <img src='/imgs/logo2.jpg' alt='logo' className="rounded-lg mt-[6px] max-sm:w-[45px] max-w-[60px]" />   
                     </div>
-                    <p className="p-4 text-3xl text-gray-100 max-sm:text-sm max-sm:px-2 font-lobster ">StockApp.</p>
+                    <p className="py-4 pl-4 pr-1 text-3xl text-gray-100 max-sm:text-sm max-sm:px-2 font-lobster ">StockApp.</p>
+                    
                 </div>
                 <ul className="shadow-lg hidden bg-white/10 border-[0.1px] border-gray-500 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg md:flex font-bold">
                     <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/" className="hover:text-gray-200">Inicio</Link></li>
@@ -63,6 +66,9 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            <div className="mx-auto m-1 content-center text-center">
+                <p className="flex justify-center text-gray-100 font-mono">Sesion {user.email} <button onClick={logout} className="bg-slate-200 text-black hover:bg-gray-800 hover:text-gray-200 duration-500 px-2 rounded-md text-lg ml-5"><AiOutlineExport/></button> </p>
+            </div>
             <div className={nav ? "fixed md:hidden z-10 left-4 top-15 w-[60%] text-sm text-white font bg-black" : "fixed left-[-100%] ease-in duration-500" }>
                 <ul onClick={handleHideNav} className="p-4 ${hiddenNav}"><li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/I">Inicio</Link></li>
                     <li className="efecto p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="Scanner">Escanear</Link></li>
@@ -71,7 +77,7 @@ const Navbar = () => {
                     <li className="efecto p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link onClick={handleHideNav} className={hiddenNav}>Cancelar</Link></li>
                 </ul>
             </div>
-
+            
         </header>
     )
 }
