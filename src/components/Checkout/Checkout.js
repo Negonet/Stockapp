@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 const Checkout = () => {
 
     const navigate = useNavigate()
-    const { cart, tBuy, emptyCart } = useContext (CartContext)
+    const { cart, tBuy, tKg, emptyCart, itemQuantity, purchaseDone } = useContext (CartContext)
     const [orderId, setOrderId] = useState(null)
     
     const [values, setValues] = useState({
@@ -54,12 +54,16 @@ const Checkout = () => {
             items: cart.map((prod) => ({
                 id: prod.id,
                 nombre: prod.producto,
+                destino: prod.destino,
                 cliente: prod.cliente,
                 kgCaja: prod.kg,
                 precio: prod.precio,
                 cantidad: prod.counter
+
              })),
-            total: tBuy(),
+            totalBuy: tBuy(),
+            totalKg: tKg(),
+            itemsQ: itemQuantity(),
             fecha: new Date().toLocaleDateString()
         }
 
@@ -123,14 +127,14 @@ const Checkout = () => {
                     showCancelButton: false,
                     confirmButtonText: 'Continuar',
                     denyButtonText: `Imprimir`,
-                    cancelButtonText: 'Volver'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             navigate(`/ItemListContainer`)
-                            emptyCart()
+                            purchaseDone()
 
                         } else if (result.isDenied) {
                                 navigate(`/Ticket/${orderId}`)
+                                purchaseDone()
                         } 
                     })
                 })
@@ -139,6 +143,7 @@ const Checkout = () => {
     if (orderId)  {
          return (
             showTicket()
+            
         )
     }        
 
@@ -195,8 +200,9 @@ const Checkout = () => {
                         className="block bg-gray-700 text-white rounded-md max-sm:w-[230px] w-[300px] m-5"
                         name="telefono"
                         />    
-
-                        <button type="submit" className="bg-green-600 py-[2px] px-[5px] max-sm:mb-2 mt-4 mx-[10px] rounded-md text-gray-100 hover:bg-green-500 hover:text-white ease-in-out duration-300">Continuar</button>
+                        <div className="flex flex-col items-center justify-center">  
+                        <button type="submit" className="bg-green-600 py-[2px] px-[5px] max-sm:mb-2 mt-2 mx-[10px] mb-2 rounded-md text-gray-100 hover:bg-green-500 hover:text-white ease-in-out duration-300">Continuar</button>
+                        </div>
                     </form>
 
                     <div className="w-[220px] backgroundimg m-auto max-sm:hidden">

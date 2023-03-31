@@ -52,21 +52,25 @@ const ItemDetail = ({ item }) => {
                     <br/>
                 </div>
             </div>
-            <div className="mx-[5px] max-w-[800px] bg-white/10 border-[0.1px] border-gray-400 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg">
+            <div className="mx-[5px] mb-2 max-w-[800px] bg-white/10 border-[0.1px] sm:grid sm:grid-cols-2 border-gray-400 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg">
+                <div className="col-start-2 flex flex-col items-center justify-center">
                 <p className="text-xl font-bold text-gray-100 mb-4">
                 Esta compra
                 </p>
                 <p className="text-gray-300 text-base">Total kg: <strong>{item.kg * counter} kg</strong></p>
-                    <p className="text-gray-300 text-base">Cantidad: <strong>{counter}</strong></p>
-                    <p className="text-gray-300 text-base">Esta Venta: $ <strong>{item.precio * item.kg * counter}</strong></p>
+                <p className="text-gray-300 text-base">Cantidad: <strong>{counter}</strong></p>
+                <p className="text-gray-300 text-base">Esta Venta: $ <strong>{item.precio * item.kg * counter}</strong></p>
+                </div>
+                <div className="flex flex-col items-center justify-center row-start-1 mt-0">
                     {
+                        
                         isInCart(item.id) 
-                        ?   <div className="mt-[10px]">
+                        ?   <div className="mt-5">
                                 <Link to="/cart" className="rounded-lg p-[5px] border-[0.1px] shadow-lg border-gray-500 mx-[10px] my-[5px] bg-slate-700 text-gray-400 hover:bg-gray-600 hover:text-white ease-in-out duration-200">
                                     Terminar mi compra
                                 </Link>
                             </div>
-                        :   <div>
+                        :   <div className="flex flex-col items-center justify-center">
                                 <p className="mt-5 text-gray-100 font-bold">
                                     Agregar al carrito
                                 </p>
@@ -80,6 +84,7 @@ const ItemDetail = ({ item }) => {
                     }
                 <br/>
                 <button onClick={handleVolver} className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] border-[0.1px] border-gray-500 rounded-md text-gray-400 shadow-lg hover:bg-slate-600 hover:text-white ease-in-out duration-300">Volver</button>
+                </div>
             </div>
         </div>
     )

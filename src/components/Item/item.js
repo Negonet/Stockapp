@@ -10,10 +10,10 @@ const Item = ( {item} ) => {
                     </Link>
                     <div className="px-6 max-sm:px-3 max-sm:py-2 mb-0 py-4">  
                         <p className="hidden">{item.id}</p>
-                        <div className="font-bold text-gray-700 max-sm:text-lg text-xl mb-2">
+                        <div className="font-bold text-gray-700 text-center max-sm:text-lg text-xl mb-2">
                             <h4>{item.producto}</h4>
                         </div>
-                        <div className="">    
+                        <div className="flex flex-col items-center justify-center">    
                             <p className="text-gray-700 max-sm:text-xs text-base">Cliente: <strong>{item.cliente}</strong></p>
                             <p className="text-gray-700 max-sm:text-xs text-base">Destino: <strong>{item.destino}</strong></p>
                             <p className="text-gray-700 hidden text-base">{item.descripcion}</p>

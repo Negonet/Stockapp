@@ -10,7 +10,7 @@ export const Scanner = () => {
                 
             </div>
             <div className="grid md:grid-cols-2 mx-auto sm:mt-[100px] max-w-[900px] place-items-center">
-                <div className="m-[10px] min-w-[350px] max-h-[400px] bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
+                <div className="m-[10px] min-w-[350px] max-h-[450px] bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
                     <div className="px-1 max-w-[350px] py-2">  
                         <p className="hidden"></p>
                         
@@ -29,11 +29,13 @@ export const Scanner = () => {
                             <p className="text-gray-700 mt-1 text-center text-base">Son Cajas: <strong></strong> | Peso: <strong> kg</strong></p>
                             <p className="text-gray-700 text-center text-base">Valor total: <strong>$,00</strong></p>
                         </div>
+                        <div className="flex flex-col items-center justify-center">
                         <hr className="h-1 mx-auto mt-5 mb-3 bg-gray-200 border-0 rounded md:my-3 dark:bg-gray-700"/>
-                        <button className="bg-green-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-green-600 hover:text-gray-300 ease-in-out duration-200">Aceptar</button>
+                        <button className="bg-green-700 py-[2px] px-[5px] my-2 mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-green-600 hover:text-gray-300 ease-in-out duration-200">Aceptar</button>
                         <Link to="">
                             <button className="bg-red-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-red-800 hover:text-gray-200 ease-in-out duration-200">Borrar</button>
                         </Link>
+                        </div>
                     </div>
                                 
                 </div>            
