@@ -106,30 +106,30 @@ export const Ticket = () => {
                                             </thead>
                                             <tbody className="">
                                         {
-                                            ticketData.items.map((prod) => {
+                                            ticketData.items.map((item) => {
                                                 
                                                 return (
-                                                <tr key={prod.id} className="border-b-[0.1px] text-[11px] bg-gray-800 border-gray-500">
-                                                    <th scope="row" className="px-3 py-4 font-medium text-gray-200 whitespace-nowrap dark:text-white">
-                                                        {prod.nombre}
+                                                <tr key={item.id} className="border-b-[0.1px] text-[11px] bg-[#222327] border-gray-500">
+                                                    <th scope="row" className="px-3 py-4 sm:text-center font-medium text-gray-200 whitespace-nowrap dark:text-white">
+                                                        {item.nombre}
                                                     </th>
                                                     <td className="px-2 text-center py-2">
-                                                        {prod.destino}
+                                                        {item.destino}
                                                     </td>
                                                     <td className="px-2 text-center py-2">
-                                                        {prod.cliente}
+                                                        {item.cliente}
                                                     </td>
                                                     <td className="px-2 text-center py-2">
-                                                        $ {prod.precio}
+                                                        $ {item.precio}
                                                     </td>
                                                     <td className="px-2 text-center py-2">
-                                                        {prod.cantidad}
+                                                        {item.cantidad}
                                                     </td>
                                                     <td className="px-2 text-center py-2">
-                                                        {prod.kgCaja * prod.cantidad}
+                                                        {item.kgCaja * item.cantidad}
                                                     </td>
                                                     <td className="px-2 max-sm:px-1 text-center py-2">
-                                                        $ {prod.kgCaja * prod.precio * prod.cantidad}
+                                                        $ {item.kgCaja * item.precio * item.cantidad}
                                                     </td>
                                                 </tr>
                                                 )})
@@ -162,7 +162,7 @@ export const Ticket = () => {
                                     
                                     <hr className="h-1 mx-auto mt-5 mb-1 bg-gray-200 border-0 rounded"/>
                                     <Link className="justify-between" to='/'>
-                                    <button className="bg-green-600 py-[2px] px-[5px] max-sm:mb-2 mt-4 mx-[10px] rounded-md text-gray-100 border-[0.1px] border-gray-300 hover:bg-green-500 hover:text-white ease-in-out duration-300">Finalizar</button>
+                                    <button className="bg-green-600 py-[2px] px-[5px] max-sm:mb-2 mt-4 mx-[10px] rounded-md text-gray-100 border-[0.1px] border-gray-300 hover:bg-green-500 hover:text-gray-700 ease-in-out duration-300">Finalizar</button>
                                     <button className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] rounded-md text-gray-400 hover:bg-slate-600 shadow-lg border-[0.1px] border-gray-600 hover:text-white ease-in-out duration-300">Imprimir</button>
                                     </Link>
                                 </div>
