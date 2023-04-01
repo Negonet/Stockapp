@@ -1,15 +1,13 @@
 import { useContext, useState } from "react"
 import { LoginContext } from "../context/LoginContext"
 
-
 export const LoginScreen = () => {
 
-    const { user, tryLogin } = useContext(LoginContext)
+    const { tryLogin } = useContext(LoginContext)
     
     const [ values, setValues ] = useState({
         email: '',
         password: ''
-
     })
     
     const handleInputChange = (e) => {

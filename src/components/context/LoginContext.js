@@ -1,50 +1,44 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { auth } from "../../firebase/config";
+import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export const LoginContext = createContext()
-
-const MOCK_USERS = [
-    {
-        id: 1,
-        email: 'admin@sa.com',
-        password: '1234',
-    },
-    {
-        id: 2,
-        email: 'user@sa.com',
-        password: '5678',
-    },
-    {
-        id: 3,
-        email: 'client@sa.com',
-        password: 'shisha',
-    },
-]
 
 export const LoginProvider = ({children}) => {
     const [user, setUser] = useState({
         email: null,
-        logged: false
+        logged: false,
+        uid: null
     })
-    
+
     const tryLogin = (values) => {
-
-        const match = MOCK_USERS.find((user) => user.email === values.email)
-
-        if (match && match.password === values.password) {
-            setUser({
-                logged: true,
-                email: match.email
-            })
-        }
+        signInWithEmailAndPassword(auth, values.email, values.password)
     }
-
+    
     const logout = () => {
-        setUser ({
-            email:null,
-            logged: false
-        })
-
+        signOut(auth)
+            .then(() => {
+                setUser ({
+                    email: null,
+                    logged: false,
+                    uid: null
+                })
+            })
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+            setUser({
+                email: user.email,
+                logged: true,
+                uid: user.uid
+            })
+            } else {
+                logout()
+        }
+    })
+    }, [])
 
     return (
 
