@@ -1,14 +1,16 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { auth } from "../../firebase/config"
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { LoginContext } from "../context/LoginContext";
 
 export const Clientes = () => {
 
+    const { user, logout } = useContext(LoginContext)
     const [ values, setValues ] = useState({
         email: '',
         password: ''
     })
-
+    console.log(user)
     const handleInputChange = (e) => {
 
         setValues({
@@ -38,16 +40,15 @@ export const Clientes = () => {
                     <div className="sm:col-start-1 my-[20px] sm:my-[40px] mx-0 sm:w-[300px] max-sm:w-[250px] max-h-fit bg-white/10 border-[0.1px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg flex flex-col items-center justify-center">
                         <div className="p-2">
                             <p className="hidden"></p>
-                            <div className="font-bold text-gray-700 flex text-xl mb-2">
+                            <div className="font-bold text-gray-700 items-center flex justify-center text-xl mb-2">
                                 <h4 className="text-gray-100">Acceso a Clientes</h4>
                             </div>
-                            <p className="text-gray-200 text-base">Cliente: <strong></strong></p>
-                            <p className="text-gray-200 text-base">Destino: <strong> </strong></p>
-                            <div className="">
-                                <p className="text-gray-300 pt-4 text-base">Cajas compradas: <strong></strong></p>
-                                <p className="text-gray-300 text-base">Precio por Kg: <strong>$ ,00</strong></p>
-                                <p className="text-gray-300 text-base">Kg por caja: <strong> kg</strong></p>
-                                <p className="text-gray-300 text-base">Valor total: <strong>$  ,00</strong></p>
+                            <p className="text-gray-200 text-base">Usuario: <strong>{user.email}</strong></p>
+                            
+                            <div className="flex flex-col items-center justify-center mb-5">
+                                <button onClick={logout} className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] border-[0.1px] border-gray-500 rounded-md text-gray-400 shadow-lg hover:bg-slate-600 hover:text-white ease-in-out duration-300">
+                                    Salir
+                                </button>
                             </div>
                             <hr className="h-1 mx-auto mt-1 mb-1 bg-gray-200 border-0 rounded"/>
                         </div>
