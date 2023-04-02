@@ -70,8 +70,8 @@ const Navbar = () => {
                 <p className="flex justify-center text-gray-100 font-mono">Sesion {user.email} <button onClick={logout} className="bg-slate-200 text-black hover:bg-gray-800 hover:text-gray-200 duration-500 px-2 rounded-md text-lg ml-5"><AiOutlineExport/></button> </p>
             </div>
             <div className={nav ? "fixed md:hidden z-10 left-4 top-15 w-[60%] text-sm text-white font bg-black" : "fixed left-[-100%] ease-in duration-500" }>
-                <ul onClick={handleHideNav} className="p-4 ${hiddenNav}"><li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/I">Inicio</Link></li>
-                    <li className="efecto p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="Scanner">Escanear</Link></li>
+                <ul onClick={handleHideNav} className="p-4"><li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/">Inicio</Link></li>
+                    <li className="efecto p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/Scanner">Escanear</Link></li>
                     <li className="efecto p-5 border-b border-[#dbcfcf] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/ItemListContainer">Productos</Link></li>
                     <li className="efecto p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/Clientes">Clientes</Link></li>
                     <li className="efecto p-5 hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link onClick={handleHideNav} className={hiddenNav}>Cancelar</Link></li>

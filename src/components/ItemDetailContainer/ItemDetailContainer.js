@@ -33,8 +33,8 @@ export const ItemDetailContainer = () => {
             <div className=" h-30 items-center max-sm:mt-[5px] my-[50px] bg-slate-50  mx-auto rounded-lg max-sm:w-[330px] p4 shadow-lg">
                 <h2 className=" text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Descripcion del producto</h2>
             </div>
-            <br/>
-            <div className="grid place-items-center" >
+            
+            <div className="flex flex-cols justify-center place-items-center" >
            {
                 loading ? <h2 className="text-white text-center text-lg font-bold">Cargando..</h2>
                     :<ItemDetail item={item}/>

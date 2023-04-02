@@ -39,9 +39,6 @@ const Cart = () => {
                 <div className="m-[20px] w-[300px] max-h-[400px] bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
                     <div className="px-6 max-w-[300px] py-4 flex flex-col items-center justify-center">  
                         <p className="hidden"></p>
-                        <div className="font-bold text-gray-700 text-xl mb-2">
-                            <h4></h4>
-                        </div>
                         <p className="text-gray-700 text-base"><strong>Estimado Cliente:</strong></p>
                         <br/>
                         <p className="text-gray-700 text-center text-base"> A continuacion se detalla el resumen de su compra<strong> </strong></p>

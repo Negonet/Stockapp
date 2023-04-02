@@ -25,7 +25,7 @@ const Contador = ( {max, counter, setCounter, handleAddCart} ) => {
                 </div>
             </div>
             <div className="mt-2">
-                <button onClick={handleAddCart} type="submit" className="ml-[6px] py-[2px] px-[5px] rounded-md text-gray-400 bg-slate-700 hover:bg-slate-600 border-[0.1px] shadow-lg border-gray-500 hover:text-white ease-in-out duration-300"><a href="#">Agregar al carrito</a></button>
+                <button onClick={handleAddCart} type="submit" className="ml-[6px] py-[2px] px-[5px] rounded-md text-gray-400 bg-slate-700 hover:bg-slate-600 border-[0.1px] shadow-lg border-gray-500 hover:text-white ease-in-out duration-300">Agregar al carrito</button>
             </div>
         </div>
 

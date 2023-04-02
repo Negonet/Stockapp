@@ -28,9 +28,9 @@ const ItemDetail = ({ item }) => {
  
     return (
       
-        <div className="m-[20px] mb-20 max-sm:mb-10 bg-white/10 border-[0.5px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg max-w-[800px] p-2 rounded-lg overflow-hidden shadow-lg"> 
+        <div className="mb-20 max-sm:mb-10 bg-white/10 border-[0.5px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg max-w-[800px] p-2 rounded-lg overflow-hidden shadow-lg"> 
             <div className="sm:grid sm:grid-cols-2 gap-4 px-2 py-2">  
-                <div className="cols-start-1">
+                <div className="cols-start-1 max-sm:items-center max-sm:flex max-sm:flex-cols max-sm:justify-center">
                     <img src={item.img} alt={item.producto} className="rounded-lg w-[400px] h-auto" /> 
                 </div>
                 <div className="max-sm:mt-4 cols-start-2">

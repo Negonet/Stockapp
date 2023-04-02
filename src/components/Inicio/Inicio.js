@@ -15,17 +15,17 @@ export const Inicio = () => {
             <div className="max-sm:w-[350px] overflow-x-hidden max-w-[900px] items-center mx-auto">
                 <hr className="mt-2"/>
                 <div className="">
-                    <img className="rounded-lg max-sm:mt-[8px] mt-[15px]" src="./imgs/pizarra.jpg"/>
+                    <img alt="pizarra-info" className="rounded-lg max-sm:mt-[8px] mt-[15px]" src="./imgs/pizarra.jpg"/>
                 </div>
                 <div className="bg-white rounded-lg">
                     <Link to="/products/corte">
-                    <img className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb2.jpg"/>
+                    <img alt="Promocion1" className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb2.jpg"/>
                     </Link>
                     
                 </div>
                 <div className="bg-white rounded-lg mb-20">
                     <Link className="bg-white" to="/products/menudencia">
-                    <img className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb3.jpg"/>
+                    <img alt="Promocion2" className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb3.jpg"/>
                     </Link>
                     {/* <div className="w-10">
                         <span className="absolute font-lobster py-2 px-8 left-20 text-red-600 border-[0.1px] border-gray-100 bg-white/10 shadow-xl rounded-lg drop-shadow-[0_1.8px_1.8px_rgba(0,0,0,0.8)] text-9xl top-[70px] justify-center items-center">

@@ -10,7 +10,7 @@ export const Clientes = () => {
         email: '',
         password: ''
     })
-    console.log(user)
+    
     const handleInputChange = (e) => {
 
         setValues({
