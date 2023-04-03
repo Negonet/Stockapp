@@ -2,12 +2,12 @@ import { Link, useNavigate } from "react-router-dom"
 import Contador from "../Contador/Contador"
 import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContex"
-
+import Swal from "sweetalert2"
 
 const ItemDetail = ({ item }) => {
 
     const {addToCart, isInCart} = useContext(CartContext)
-    const [counter, setCounter] = useState(1)
+    const [counter, setCounter] = useState(0)
     const navigate = useNavigate()
 
     const handleVolver = () => {
@@ -16,13 +16,32 @@ const ItemDetail = ({ item }) => {
     }
 
     const handleAddCart = () => {
+        if (counter > 0) {
         const itemToCart = {
             ...item,
             counter
-            
+        } 
+        addToCart (itemToCart)}
+        else {
+            const Toast = Swal.mixin({
+                width: '300px',
+                background: 'white',
+                position: 'center',
+                showConfirmButton: false,
+                toast: true,
+                timer: 800,
+                color: 'black',
+                allowEscapeKey: false,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                  }
+                })
+                Toast.fire({
+                  icon: 'error',
+                  title: 'Porfavor agregue 1 o mas items',
+                })
         }
-        
-        addToCart (itemToCart)
 
     }
  

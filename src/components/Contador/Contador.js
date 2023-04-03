@@ -1,12 +1,20 @@
 
 const Contador = ( {max, counter, setCounter, handleAddCart} ) => {
     
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        if (value >= 1 && value <= max) {
+            setCounter(parseInt(value));
+        }
+    };
+
+
     const handleMore = () => {
         counter < max && setCounter(counter +1)
     }
 
     const handleLess = () => {
-        if (counter > 1) {
+        if (counter > 0) {
             setCounter(counter -1)
         } 
     } 
@@ -19,9 +27,17 @@ const Contador = ( {max, counter, setCounter, handleAddCart} ) => {
                 <div className="btn1">
                     <button onClick={handleMore} disabled={counter === max} className={`rounded-md py-0 px-[3px] font-bold text-gray-200 ${counter === max ? "bg-black" : "bg-green-600 shadow-lg hover:bg-green-500 hover:text-gray-600 ease-in-out duration-300"}`} >+</button>     
                 </div>
-                <span className="px-2 font-bold">{counter}</span>
-                <div className="btn2 ">
-                    <button onClick={handleLess} disabled={counter === 1} className={`rounded-md py-0 px-[5px] font-bold text-gray-200  ${counter === 1 ? "bg-black" : "ease-in-out duration-300 shadow-lg bg-red-700 hover:bg-red-600 hover:text-gray-600" }`}>-</button>     
+                <span className="mx-2 font-bold">
+                    <input
+                        type="number"
+                        min="0"
+                        max={max}
+                        value={counter}
+                        onChange={handleInputChange}
+                        className="text-center w-12 bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/>
+                </span>
+                <div className="btn2">
+                    <button onClick={handleLess} disabled={counter === 0} className={`rounded-md py-0 px-[5px] font-bold text-gray-200  ${counter === 0 ? "bg-black" : "ease-in-out duration-300 shadow-lg bg-red-700 hover:bg-red-600 hover:text-gray-600" }`}>-</button>     
                 </div>
             </div>
             <div className="mt-2">

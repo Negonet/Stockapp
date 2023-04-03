@@ -10,7 +10,7 @@ export const Scanner = () => {
             </div>
             <div className="mx-auto py-5 bg-no-repeat bg-cover bg-center bg-[url('/public/imgs/bg-04.jpg')] h-fit-content rounded-lg sm:w-[700px] lg:w-[1000px]">
                 <div className="grid md:grid-cols-2 mx-auto max-w-[900px] place-items-center">
-                    <div className="m-[10px] min-w-[350px] max-h-[450px] bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
+                    <div className="my-[10px] sm:ml-[20px] min-w-[350px] max-h-[450px] bg-slate-50 p-2 rounded-lg overflow-hidden shadow-lg">
                         <div className="px-1 max-w-[350px] py-2">  
                             <p className="hidden"></p>
                             
