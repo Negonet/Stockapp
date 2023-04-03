@@ -9,7 +9,6 @@ import * as Yup from 'yup';
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
-                
                 .required('Este campo es obligatorio')
                 .min(4, 'El nombre es demasiado corto')
                 .max(30, 'Maximo 30 caracteres'),
@@ -23,10 +22,8 @@ const schema = Yup.object().shape({
     telefono: Yup.number()
                     .required('Este campo es obligatorio')
                     .min(9999999, 'El numero es incorrecto')
-                    
-
 })  
-console.log(schema.nombre)
+
 const Checkout = () => {
 
     const navigate = useNavigate()
@@ -46,7 +43,6 @@ const Checkout = () => {
                 kgCaja: prod.kg,
                 precio: prod.precio,
                 cantidad: prod.counter
-
              })),
             totalBuy: tBuy(),
             totalKg: tKg(),
@@ -72,7 +68,6 @@ const Checkout = () => {
                             navigate(-1)
                     }
                 })
-         
         });
 
         const ordersRef = collection(db, 'Ordenes de compras')
@@ -108,6 +103,9 @@ const Checkout = () => {
                     text: 'Ref: ' + orderId,
                     footer: '<b>Gracias!</b>',
                     toast: true,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    allowOutsideClick: false,
                     padding: '10px',
                     width: '390px',
                     showDenyButton: true,
@@ -172,7 +170,7 @@ const Checkout = () => {
                                              : "block text-white bg-gray-700 pl-9 rounded-md max-sm:w-[230px] w-[300px] m-5"}
                                         name="nombre"
                                     />
-                                    {errors.nombre && <p class="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span class="font-medium">Espera!</span> {errors.nombre}</span></p>}           
+                                    {errors.nombre && <p className="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span className="font-medium">Espera!</span> {errors.nombre}</span></p>}           
                                                        
                                     <input 
                                         onChange={handleChange}
@@ -181,11 +179,10 @@ const Checkout = () => {
                                         placeholder={" Direccion"}
                                         className={errors.direccion
                                             ? "block text-red-400 border-2 border-red-500 bg-gray-700 pl-9 rounded-md max-sm:w-[230px] w-[300px] mx-5 mt-4 mb-2 max-sm:placeholder:text-sm"
-                                           
                                             : "block text-white bg-gray-700 pl-9 rounded-md max-sm:w-[230px] w-[300px] m-5"}
                                         name="direccion"
                                     />
-                                    {errors.direccion && <p class="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span class="font-medium">Espera!</span> {errors.direccion}</span></p>}
+                                    {errors.direccion && <p className="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span className="font-medium">Espera!</span> {errors.direccion}</span></p>}
 
                                     <div className="flex sm:ml-5 mt-4 max-sm:justify-center">
                                         <span className="items-center px-3 max-sm:px-1 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600">
@@ -203,20 +200,21 @@ const Checkout = () => {
                                             name="email"
                                             />    
                                     </div>
-                                    {errors.email && <p class="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span class="font-medium">Espera!</span> {errors.email}</span></p>}
+                                    {errors.email && <p className="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span className="font-medium">Espera!</span> {errors.email}</span></p>}
         
                                     <input 
                                         onChange={handleChange}
                                         value={values.telefono}
                                         type={'number'}
+                                        inputMode={'numeric'}
                                         placeholder={" Telefono de contacto"}
                                         className={errors.telefono
-                                            ? "block text-red-400 border-2 border-red-500 bg-gray-700 pl-9 rounded-md max-sm:w-[230px] w-[300px] mx-5 mt-4 mb-2 max-sm:placeholder:text-sm"
+                                            ? "block text-red-400 border-2 border-red-500 bg-gray-700 pl-9 rounded-md max-sm:w-[230px] w-[300px] mx-5 mt-4 mb-2 max-sm:placeholder:text-sm [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                            
-                                            : "block text-white bg-gray-700 pl-9 rounded-md max-sm:w-[230px] w-[300px] m-5"}
+                                            : "block text-white bg-gray-700 pl-9 rounded-md max-sm:w-[230px] w-[300px] m-5 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"}
                                         name="telefono"
                                     />    
-                                    {errors.telefono && <p class="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span class="font-medium">Espera!</span> {errors.telefono}</span></p>}
+                                    {errors.telefono && <p className="mt-2 ml-6 max-sm:text-xs text-sm text-red-600"><span className="bg-slate-300 p-1 rounded-md"><span className="font-medium">Espera!</span> {errors.telefono}</span></p>}
                                     
                                     <div className="flex flex-col items-center justify-center">  
                                     <button type="submit" disabled={isSubmitting} className="bg-green-600 py-[2px] px-[5px] max-sm:mb-2 mt-5 mx-[10px] mb-2 rounded-md text-gray-100 hover:bg-green-500 hover:text-white ease-in-out duration-300">Continuar</button>

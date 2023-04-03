@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase/config";
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import Swal from "sweetalert2";
 
 export const LoginContext = createContext()
 
@@ -11,9 +12,43 @@ export const LoginProvider = ({children}) => {
         uid: null
     })
 
-    const tryLogin = (values) => {
-        signInWithEmailAndPassword(auth, values.email, values.password)
-    }
+    const tryLogin = async (values) => {
+       try { await signInWithEmailAndPassword(auth, values.email, values.password);
+            if(user.logged = true) {
+                const Toast = Swal.mixin({
+                    icon: 'sucess',
+                    title: 'Acceso concedido',
+                    text: '',
+                    width: '300px',
+                    background: 'white',
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    toast: true,
+                    timer: 1000,
+                    color: 'black',
+                    allowEscapeKey: false,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                      }
+                    })
+                    Toast.fire({
+                      icon: 'success',
+                      title: 'Sesion iniciada',
+                    })
+            }
+            } catch  (err) {
+            Swal.fire({
+                    icon: 'error',
+                    title: 'Ocurrio un problema',
+                    text: 'Los datos de email/contraseña son incorrectos',
+                    width: '300px',
+                    background: 'black',
+                    confirmButtonColor: 'green',
+                    color: 'white',
+                    allowEscapeKey: false,
+            })
+    }}
     
     const logout = () => {
         signOut(auth)
