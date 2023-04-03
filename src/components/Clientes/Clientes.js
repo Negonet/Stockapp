@@ -48,10 +48,10 @@ export const Clientes = () => {
 
     return (
         <div>
-            <div className=" h-30 max-sm:mt-[40px] my-[50px] items-center bg-slate-50 mx-auto rounded-lg max-sm:w-[330px] max-w-[900px] shadow-lg">
+            <div className=" h-30 max-sm:mt-[40px] lg:max-w-[600px] my-[50px] items-center bg-slate-50 mx-auto rounded-lg max-sm:w-[330px] max-w-[900px] shadow-lg">
                 <h2 className="text-gray-700 p-2 shadow-lg max-sm:text-base font-mono text-center text-3xl">Clientes</h2>
             </div>
-            <div className="mb-[100px] max-sm:mb-20 max-sm:mt-[10px] max-sm:mx-[10px] bg-[url('/public/imgs/bg-01.jpg')] h-fit-content rounded-lg sm:w-[1000px] mx-auto bg-no-repeat bg-cover bg-center">
+            <div className="mb-[100px] max-sm:mb-20 max-sm:mt-[10px] max-sm:mx-[10px] bg-[url('/public/imgs/bg-01.jpg')] h-fit-content rounded-lg sm:w-[700px] lg:w-[1000px] mx-auto bg-no-repeat bg-cover bg-center">
 
                 <div className="grid sm:grid-cols-2 mx-auto sm:max-w-[1000px] max-sm:h-[600px] h-[550px] max-sm:max-w-[900px] sm:mt-[40px] place-items-center">
                     <div className="sm:col-start-1 my-[20px] sm:my-[40px] mx-0 sm:w-[300px] max-sm:w-[250px] max-h-fit bg-white/10 border-[0.1px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg flex flex-col items-center justify-center">
