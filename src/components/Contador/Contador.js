@@ -34,7 +34,7 @@ const Contador = ( {max, counter, setCounter, handleAddCart} ) => {
                         max={max}
                         value={counter}
                         onChange={handleInputChange}
-                        className="text-center w-12 bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/>
+                        className="text-center text-gray-200 w-12 bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/>
                 </span>
                 <div className="btn2">
                     <button onClick={handleLess} disabled={counter === 0} className={`rounded-md py-0 px-[5px] font-bold text-gray-200  ${counter === 0 ? "bg-black" : "ease-in-out duration-300 shadow-lg bg-red-700 hover:bg-red-600 hover:text-gray-600" }`}>-</button>     
