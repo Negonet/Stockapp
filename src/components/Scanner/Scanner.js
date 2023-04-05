@@ -1,7 +1,18 @@
+import { useState } from "react"
 import { BsFillTrashFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 export const Scanner = () => {
+
+    const [ code, setGetCode] = useState('')
+
+    const handlerGetCode = (e) => {
+
+        const viewCode = e.target.value.split(' ')
+        const codeView = { ...viewCode}
+        setGetCode(codeView)
+        
+    }
 
     return (
         <div className="mb-20">
@@ -17,24 +28,30 @@ export const Scanner = () => {
                             <p className="text-gray-700 text-center text-base"><strong>Enfrente el codigo</strong></p>
                             <br/>
                             <div className="">
-                                <input className="h-[80px] w-full border-2 border-rose-500"></input>
+                                <input onChange={handlerGetCode} className="h-[80px] w-full text-xs text-center border-2 border-rose-500" placeholder="En espera"></input>
                             </div>
                             <br/>
                             <div className="font-bold text-gray-700 text-center text-sm mb-0">
                                 <h4>Corresponde a</h4>
                             </div>
+                            
                             <div className="mt-3">
-                                <p className="text-gray-700 text-center text-base">Cliente: <strong></strong></p>
-                                <p className="text-gray-700 text-center text-base">Destino: <strong></strong></p>
-                                <p className="text-gray-700 mt-1 text-center text-base">Son Cajas: <strong></strong> | Peso: <strong> kg</strong></p>
-                                <p className="text-gray-700 text-center text-base">Valor total: <strong>$,00</strong></p>
+                                <p className="text-gray-700 text-center text-base">Cliente: <strong>{code[0]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Destino: <strong>{code[1]}</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Carga: OP <strong>{code[2]}</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Peso Neto: <strong>{code[4]} kg</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Peso Bruto: <strong>{code[5]} kg</strong></p>
+                                <p className="text-gray-700 text-center text-base">Lote: <strong>{code[3]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Id: <strong>{code[6]}</strong></p>
                             </div>
                             <div className="flex flex-col items-center justify-center">
                             <hr className="h-1 mx-auto mt-5 mb-3 bg-gray-200 border-0 rounded md:my-3 dark:bg-gray-700"/>
-                            <button className="bg-green-700 py-[2px] px-[5px] my-2 mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-green-600 hover:text-gray-300 ease-in-out duration-200">Aceptar</button>
-                            <Link to="">
-                                <button className="bg-red-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-red-800 hover:text-gray-200 ease-in-out duration-200">Borrar</button>
-                            </Link>
+                            <div className="flex">
+                                <button className="bg-green-700 py-[2px] px-[5px] my-2 mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-green-600 hover:text-gray-300 ease-in-out duration-200">Aceptar</button>
+                                <Link to="">
+                                    <button className="bg-red-700 py-[2px] px-[5px] mt-0 mx-[10px] rounded-md text-gray-900 hover:bg-red-800 hover:text-gray-200 ease-in-out duration-200">Borrar</button>
+                                </Link>
+                            </div>
                             </div>
                         </div>
                     </div>            
