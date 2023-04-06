@@ -26,7 +26,7 @@ export const Scanner = () => {
         
         const viewCode = (e.target.value.toUpperCase()).split(' ')
         const codeView = ({...viewCode})
-        setBarcodeScan(barcodeScan)
+        console.log(codeView)
         // setBarcodeScan({...viewCode})
         // // setBarcodeScan(codeView)
         // // const viewCode = barcodeScan.split(' ')
