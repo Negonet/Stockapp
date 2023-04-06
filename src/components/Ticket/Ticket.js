@@ -4,9 +4,6 @@ import { db } from "../../firebase/config"
 import { getDoc, doc } from "firebase/firestore"
 
 
-
-
-
 export const Ticket = () => {
     
     const [ ticketData, setTicketData] = useState([])
@@ -30,7 +27,7 @@ export const Ticket = () => {
             }) 
             .finally(() => setLoading(false))
             
-    }, [])
+    }, [ticketId])
     
     return (
         <div>

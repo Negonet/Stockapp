@@ -58,9 +58,9 @@ export const Clientes = () => {
                         <div className="p-2">
                             <p className="hidden"></p>
                             <div className="font-bold text-gray-700 items-center flex justify-center text-xl mb-2">
-                                <h4 className="text-gray-100">Acceso a Clientes</h4>
+                                <h4 className="text-gray-100">Usuario Actual</h4>
                             </div>
-                            <p className="text-gray-200 text-base">Usuario: <strong>{user.email}</strong></p>
+                            <p className="text-gray-200 text-base"><strong>{user.email}</strong></p>
                             
                             <div className="flex flex-col items-center justify-center mb-5">
                                 <button onClick={logout} className="bg-slate-700 py-[2px] px-[5px] mt-4 mx-[10px] border-[0.1px] border-gray-500 rounded-md text-gray-400 shadow-lg hover:bg-slate-600 hover:text-white ease-in-out duration-300">

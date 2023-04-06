@@ -1,10 +1,10 @@
 Users>
 
 admin@stockapp.com
-user1234
+admin1234
 
 user@stockapp.com
-admin1234
+user1234
 
 client@stockapp.com
-admin1234
+client1234

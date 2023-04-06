@@ -85,6 +85,8 @@ const Checkout = () => {
             title: 'Generando ticket',
             html: 'Faltan <b></b> millisegundos.',
             timer: 2000,
+            allowEscapeKey: false,
+            allowEnterKey: false,
             timerProgressBar: true,
             didOpen: () => {
               Swal.showLoading()
@@ -103,9 +105,6 @@ const Checkout = () => {
                     text: 'Ref: ' + orderId,
                     footer: '<b>Gracias!</b>',
                     toast: true,
-                    allowEscapeKey: false,
-                    allowEnterKey: false,
-                    allowOutsideClick: false,
                     padding: '10px',
                     width: '390px',
                     showDenyButton: true,
@@ -225,14 +224,12 @@ const Checkout = () => {
 
 
                             )}
-                     </Formik>
+                    </Formik>
                     
-                     <div className="relative w-[240px] flex flex-col justify-center items-center max-sm:hidden sm:col-start-2">
+                    <div className="relative w-[240px] flex flex-col justify-center items-center max-sm:hidden sm:col-start-2">
                           <img src="./imgs/bg.jpg" alt="fork" className="absolute bottom-0 max-h-[220px]"/>
                     </div>
-                    
                 </div>
-                
             </div>
         </div>
     )
