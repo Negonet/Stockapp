@@ -4,14 +4,13 @@ import { Link } from "react-router-dom"
 
 export const Scanner = () => {
 
-    const [ code, setGetCode] = useState('')
+    const [ getCode, setGetCode] = useState('')
 
     const handlerGetCode = (e) => {
 
         const viewCode = e.target.value.split(' ')
-        const codeView = { ...viewCode}
-        setGetCode(codeView)
-        
+        setGetCode({ ...viewCode})
+        console.log(getCode)
     }
 
     return (
@@ -36,13 +35,13 @@ export const Scanner = () => {
                             </div>
                             
                             <div className="mt-3">
-                                <p className="text-gray-700 text-center text-base">Cliente: <strong>{code[0]}</strong></p>
-                                <p className="text-gray-700 text-center text-base">Destino: <strong>{code[1]}</strong></p>
-                                <p className="text-gray-700 mt-1 text-center text-base">Carga: OP <strong>{code[2]}</strong></p>
-                                <p className="text-gray-700 mt-1 text-center text-base">Peso Neto: <strong>{code[4]} kg</strong></p>
-                                <p className="text-gray-700 mt-1 text-center text-base">Peso Bruto: <strong>{code[5]} kg</strong></p>
-                                <p className="text-gray-700 text-center text-base">Lote: <strong>{code[3]}</strong></p>
-                                <p className="text-gray-700 text-center text-base">Id: <strong>{code[6]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Cliente: <strong>{getCode[0]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Destino: <strong>{getCode[1]}</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Carga: OP <strong>{getCode[2]}</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Peso Neto: <strong>{getCode[4]} kg</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Peso Bruto: <strong>{getCode[5]} kg</strong></p>
+                                <p className="text-gray-700 text-center text-base">Lote: <strong>{getCode[3]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Id: <strong>{getCode[6]}</strong></p>
                             </div>
                             <div className="flex flex-col items-center justify-center">
                             <hr className="h-1 mx-auto mt-5 mb-3 bg-gray-200 border-0 rounded md:my-3 dark:bg-gray-700"/>
