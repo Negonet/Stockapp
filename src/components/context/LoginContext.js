@@ -47,7 +47,9 @@ export const LoginProvider = ({children}) => {
                     confirmButtonColor: 'green',
                     color: 'white',
                     allowEscapeKey: false,
-            })
+            }).then(() => {
+                window.location='/';
+            });
     }}
     
     const logout = () => {
