@@ -6,41 +6,22 @@ import useScanDetection from "use-scan-detection"
 export const Scanner = () => {
 
     const [ barcodeScan, setBarcodeScan ] = useState('')
-    const [ code, setGetCode] = useState('')
+    const [loading, setLoading] = useState(true)
+    
 
     useScanDetection({
         onComplete: setBarcodeScan,
-        minLenght: 3
+        minLenght: 100
         
     })
-
-    // useEffect(() => {
-    //     const handlerGetCode = async () => {
-    //         await timeout (500);
-    //         const viewCode = (e.target.value)
-    //         console.log(viewCode)
-    //     }
-    // })
-
-    const handlerGetCode = (e) => {
-        
-        const viewCode = (e.target.value.toUpperCase()).split(' ')
-        const codeView = ({...viewCode})
-        console.log(codeView)
-        // setBarcodeScan({...viewCode})
-        // // setBarcodeScan(codeView)
-        // // const viewCode = barcodeScan.split(' ')
-        // // setBarcodeScan({ ...viewCode})
-        // console.log(barcodeScan)
-        
-    }
+    const viewCode = barcodeScan.split(' ')
 
     const wipeScanner = () => {
-        setBarcodeScan([])
+        setBarcodeScan('')
         
     }
-
-    console.log(barcodeScan)
+    
+    //console.log(viewCode)
 
     return (
         <div className="mb-20">
@@ -53,24 +34,24 @@ export const Scanner = () => {
                         <div className="px-1 max-w-[350px] py-2">  
                             <p className="hidden"></p>
                             
-                            <p className="text-gray-700 text-center text-base"><strong>Enfrente el codigo</strong></p>
-                            <br/>
-                            <div className="">
+                            {/* <p className="text-gray-700 text-center text-base"><strong>Enfrente el codigo</strong></p>
+                            <br/> */}
+                            {/* <div className="">
                                 <input onChange={handlerGetCode} className="h-[80px] w-full text-xs text-center border-2 border-rose-500"></input>
-                            </div>
+                            </div> */}
                             <br/>
                             <div className="font-bold text-gray-700 text-center text-sm mb-0">
                                 <h4>Corresponde a</h4>
                             </div>
                             
                             <div className="mt-3">
-                                <p className="text-gray-700 text-center text-base">Producto: <strong>{barcodeScan}</strong></p>
-                                <p className="text-gray-700 text-center text-base">Destino: <strong>{barcodeScan[1]}</strong></p>
-                                <p className="text-gray-700 mt-1 text-center text-base">Carga: OP <strong>{barcodeScan[2]}</strong></p>
-                                <p className="text-gray-700 mt-1 text-center text-base">Peso Neto: <strong>{barcodeScan[4]} kg</strong></p>
-                                <p className="text-gray-700 mt-1 text-center text-base">Peso Bruto: <strong>{barcodeScan[5]} kg</strong></p>
-                                <p className="text-gray-700 text-center text-base">Lote: <strong>{barcodeScan[3]}</strong></p>
-                                <p className="text-gray-700 text-center text-base">Id: <strong>{barcodeScan[6]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Producto: <strong>{viewCode[0]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Destino: <strong>{viewCode[1]}</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Carga: OP <strong>{viewCode[2]}</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Peso Neto: <strong>{viewCode[4]} kg</strong></p>
+                                <p className="text-gray-700 mt-1 text-center text-base">Peso Bruto: <strong>{viewCode[5]} kg</strong></p>
+                                <p className="text-gray-700 text-center text-base">Lote: <strong>{viewCode[3]}</strong></p>
+                                <p className="text-gray-700 text-center text-base">Id: <strong>{viewCode[6]}</strong></p>
                             </div>
                             <div className="flex flex-col items-center justify-center">
                             <hr className="h-1 mx-auto mt-5 mb-3 bg-gray-200 border-0 rounded md:my-3 dark:bg-gray-700"/>
@@ -85,8 +66,8 @@ export const Scanner = () => {
                     </div>            
                     <div className="my-[10px] mx-0 max-w-[300px] max-h-fit bg-white/10 border-[0.1px] border-gray-600 bg-opacity-50 backdrop-filter backdrop-blur-lg p-2 rounded-lg overflow-hidden shadow-lg">
                         {/* {
-                            barcodeScan.map((prod) => ( */}
-                                <div /*key={prod.id}*/ className="p-2 max-w-[200px]">  
+                            barcodeScan.map((prod) => (
+                                <div key={prod.id} className="p-2 max-w-[200px]">  
                                     <div className="font-bold text-gray-700 flex  pl-5 text-xl mb-2">
                                         <h4 className="pr-5 mt-3 text-gray-100">Producto</h4><button className="text-gray-400 absolute right-3 hover:text-gray-200 duration-300"><BsFillTrashFill/></button>
                                     </div>
@@ -100,8 +81,8 @@ export const Scanner = () => {
                                     </div>
                                     <hr className="h-1 mx-auto mt-1 mb-1 bg-gray-200 border-0 rounded dark:bg-gray-700"/>
                                 </div>
-                         {/* ))
-                    } */}
+                          ))
+                    }  */}
                     </div>                
                 </div>
             </div>
