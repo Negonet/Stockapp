@@ -42,7 +42,7 @@ const Navbar = () => {
                     <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Clientes" className="hover:text-gray-200">Clientes</Link></li>
 
                 </ul>
-                <form className="flex max-sm:mr-2 items-center">   
+                {/* <form className="flex max-sm:mr-2 items-center">   
                     
                     <div className="relative max-sm:pr-0 max-sm:w-[120px] w-full">
                         <div className="absolute max-sm:hidden inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -56,7 +56,7 @@ const Navbar = () => {
                     <button type="submit" className="inline-flex items-center py-2.5 px-3 ml-2 text-sm max-sm:hidden font-medium text-white rounded-lg border-[0.5px] border-gray-500 hover:text-white bg-white/10 bg-opacity-50 backdrop-filter backdrop-blur-lg hover:bg-gray-600">
                         <svg aria-hidden="true" className="w-7 h-5 mr-1 -ml-1" fill="none" stroke="currentColor" viewBox="0 0 12 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
-                    </form>
+                    </form> */}
                 <div className="flex text-gray-100 max-sm:pl-[0px] items-center">
                     <div onClick={handleNav} className="block md:hidden">
                         {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/> }
@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className="mx-auto m-1 content-center text-center">
                 <p className="flex justify-center text-gray-100 font-mono">Sesion {user.email} <button onClick={logout} className="bg-slate-200 text-black hover:bg-gray-800 hover:text-gray-200 duration-500 px-2 rounded-md text-lg ml-5"><AiOutlineExport/></button> </p>
             </div>
-            <div className={nav ? "fixed md:hidden z-10 left-4 top-15 w-[60%] text-sm text-white font bg-black" : "fixed left-[-100%] ease-in duration-500" }>
+            <div className={nav ? "fixed md:hidden z-10 right-4 top-15 w-[60%] text-sm text-white font bg-black" : "fixed right-[-100%] ease-in duration-500" }>
                 <ul onClick={handleHideNav} className="p-4"><li className="p-5 border-b border-[#726c6c] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/">Inicio</Link></li>
                     <li className="efecto p-5 border-b border-[#a89f9f] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/Scanner">Escanear</Link></li>
                     <li className="efecto p-5 border-b border-[#dbcfcf] hover:bg-[#262626] ease-in-out duration-500 hover:text-base"><Link to="/ItemListContainer">Productos</Link></li>

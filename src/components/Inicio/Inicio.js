@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Banner from "../Banner/Banner.js"
 import './Inicio.scss'
 
 
@@ -8,24 +7,26 @@ export const Inicio = () => {
     return (
 
         <div>
-            <Banner />
-            <div className=" h-30 max-sm:mt-[30px] max-sm:mb-[10px] items-center bg-slate-50 my-[0px] mx-auto rounded-lg max-sm:w-[330px] max-w-[900px] shadow-lg">
+            
+            <div className="h-30 mt-[30px] max-sm:mb-[10px] items-center bg-slate-50 my-[0px] mx-auto rounded-lg max-sm:w-[330px] max-w-[900px] shadow-lg">
                 <h2 className="text-gray-700 p-2 shadow-lg font-mono text-center max-sm:text-base text-3xl">Pagina de Inicio</h2>
             </div>
             <div className="max-sm:w-[350px] overflow-x-hidden max-w-[900px] items-center mx-auto">
                 <hr className="mt-2"/>
-                <div className="">
-                    <img alt="pizarra-info" className="rounded-lg max-sm:mt-[8px] mt-[15px]" src="./imgs/pizarra.jpg"/>
+                <div className="bg-white rounded-lg">
+                    <Link className="bg-white" to="/itemListContainer">
+                        <img alt="Listado de Productos" className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/pizarra.jpg"/>
+                    </Link>                
                 </div>
                 <div className="bg-white rounded-lg">
                     <Link to="/products/corte">
-                    <img alt="Promocion1" className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb2.jpg"/>
+                        <img alt="Promocion1" className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb2.jpg"/>
                     </Link>
                     
                 </div>
                 <div className="bg-white rounded-lg mb-20">
                     <Link className="bg-white" to="/products/menudencia">
-                    <img alt="Promocion2" className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb3.jpg"/>
+                        <img alt="Promocion2" className="efecto rounded-lg shadow-[0px_12px_50px_2px_rgba(0,0,0,0.56)] max-sm:mt-[6px] mt-[15px]" src="./imgs/lamb3.jpg"/>
                     </Link>
                     {/* <div className="w-10">
                         <span className="absolute font-lobster py-2 px-8 left-20 text-red-600 border-[0.1px] border-gray-100 bg-white/10 shadow-xl rounded-lg drop-shadow-[0_1.8px_1.8px_rgba(0,0,0,0.8)] text-9xl top-[70px] justify-center items-center">
