@@ -37,7 +37,7 @@ const Navbar = () => {
                 </div>
                 <ul className="shadow-lg hidden bg-white/10 border-[0.1px] border-gray-500 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg md:flex font-bold">
                     <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/" className="hover:text-gray-200">Inicio</Link></li>
-                    <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Scanner" className="hover:text-gray-200">Escanear</Link></li>
+                    <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Logistics" className="hover:text-gray-200">Escanear</Link></li>
                     <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400 hover:text-base"><Link to="/ItemListContainer" className="hover:text-gray-200">Productos</Link></li>
                     <li className="efecto px-4 py-3 text-gray-300 hover:bg-gray-700 hover:rounded-lg ease-in-out duration-500 hover:text-gray-400"><Link to="/Clientes" className="hover:text-gray-200">Clientes</Link></li>
 

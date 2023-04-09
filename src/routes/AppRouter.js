@@ -11,6 +11,7 @@ import { Clientes } from "../components/Clientes/Clientes"
 import { Scanner } from "../components/Scanner/Scanner"
 import { LoginScreen } from "../components/LoginScreen/LoginScreen"
 import Navbar from "../components/Navbar/Navbar"
+import { Logistics } from "../components/Logistics/Logistics"
 
 
 
@@ -35,7 +36,7 @@ const AppRouter = () => {
                           <Route path="/Ticket/:ticketId" element={ <Ticket /> }/>
                           <Route path="/Checkout" element={ <Checkout />}/>
                           <Route path="/Clientes" element={ <Clientes /> }/>
-                          <Route path="/Scanner" element={<Scanner /> }/>
+                          <Route path="/Logistics" element={<Logistics /> }/>
                           <Route path="*" element={ <Navigate to="/"/> }/>
                     </Routes>
                   </>
